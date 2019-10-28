@@ -1,0 +1,11 @@
+#Person {
+    margin-left: 2%;
+    opacity: 0.97;
+    margin-top: 1%;
+    height: 90%;
+    margin-right: -9%;
+    z-index: 1000;
+    width: 20%;
+    border-radius: 1%;
+    background-color: #fff;
+}

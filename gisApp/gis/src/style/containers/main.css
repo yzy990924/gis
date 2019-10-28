@@ -1,0 +1,40 @@
+
+#main{
+    display: flex;
+    background-color: #373737;
+    flex-direction: column;
+}
+
+.mainBox{
+    display: flex;
+  flex: 1;
+}
+.map{
+    flex: 1;
+    margin-left: 10%;
+}
+.side{
+    flex: 0 0 12em;
+}
+
+.top{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top:1%;
+
+    margin-bottom: 0.5%;
+}
+.inputSearch{
+    display:flex
+}
+.inputField{
+    flex:1
+
+}
+.topBox{
+    width: 100%;
+    background-color: rgba(255,255,255,0.03);
+    margin-top: 0;
+}
