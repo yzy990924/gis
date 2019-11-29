@@ -16,7 +16,16 @@ import 'echarts/lib/chart/gauge';
 import 'echarts/lib/chart/pie';
 
 var geoCoordMap = {
-    '方特': [117.74575, 39.160382]
+    '方特': [117.74575, 39.160382],
+    '北辰郊野公园': [117.158865,39.277851],
+    "五大道": [117.209997,39.116392],
+    "人民公园":[117.224576,39.111156],
+    "津门故里":[117.199184,39.149532],
+    "天津义和团纪念馆":[117.164626,39.152006],
+    "梁启超纪念馆":[117.206146,39.142874],
+    "东丽湖":[117.498531,39.16477],
+    "张学良故居博物馆(少帅府)":[117.208211,39.129784],
+
 }
 
 var convertData = function (data) {
@@ -117,7 +126,16 @@ class Map extends Component {
                     type: 'bar3D',
                     coordinateSystem: 'geo3D',
                     data: convertData([
-                        { name: "方特", value: 9 },
+                        { name: "方特", value: 50 },
+                        { name: "北辰郊野公园", value: 30 },
+                        { name: "五大道", value: 55},
+                        { name: "人民公园", value:35 },
+                        { name: "津门故里", value: 39},
+                        { name: "天津义和团纪念馆", value: 45},
+                        { name: "梁启超纪念馆", value:53},
+                        { name: "东丽湖", value:29},
+                        { name: "张学良故居博物馆(少帅府)", value:48}
+  
                     ]),
                     barSize: 1, //柱子粗细
                     shading: 'lambert',
@@ -127,6 +145,7 @@ class Map extends Component {
                         show: false,
                         formatter: '{b}'
                     },
+                    minHeight: 0.2,
                     //标签的样式
                     itemStyle: {
                         emphasis: {
@@ -137,7 +156,7 @@ class Map extends Component {
                 }
             ],
             visualMap: {
-                max: 40,
+                max: 50,
                 calculable: true,
                 realtime: false,
                 inRange: {
@@ -156,13 +175,8 @@ class Map extends Component {
             sceneId: param.value[2],
             isScene: true
         })
-        console.log(this.state.sceneId)
-        console.log(this.props)
-        window.localStorage.setItem('sid',this.state.sceneId)
-        console.log(window.localStorage.getItem('sid'))
         const {changeRoot} = this.props;
-        changeRoot(this.state.isScene)
-
+        changeRoot(this.state.isScene,this.state.sceneId)
     }
     render() {
         let onEvents = {

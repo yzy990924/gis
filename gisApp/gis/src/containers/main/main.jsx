@@ -5,13 +5,15 @@ import Map from './map.jsx'
 import Search from './search.jsx'
 import "../../style/containers/main.css"
 import { Icon, Input } from 'antd';
+import Scene from '../scene/scene.jsx'
 
 class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             sid: '',
-            isPerson: false
+            isPerson: false,
+            isScene: false
         }
         this.changeRoot = this.changeRoot.bind(this)
         this.onClickPerson = this.onClickPerson.bind(this)
@@ -24,15 +26,22 @@ class Main extends React.Component {
 
     }
 
-    changeRoot(isScene) {
-        console.log(window.localStorage.getItem('sid'))
-
-        const { history } = this.props
-        console.log(history)
+    changeRoot(isScene, sceneID) {
         if (isScene) {
-            console.log('a')
-            history.push('./scene')
+
+            if(sceneID === 50){
+                this.setState({
+                    sceneID:1
+                })
+            }else if(sceneID === 30){
+                this.setState({
+                    sceneID:2
+                })
+            }
         }
+        this.setState({
+            isScene: true,
+        })
     }
 
     getStyles() {
@@ -52,22 +61,33 @@ class Main extends React.Component {
         })
     }
     render() {
+        const sceneID = this.state.sceneID
         return (
             <div id='main' style={this.getStyles()}>
-                <div className='topBox'>
-                    <div className='top' style={this.getStylesTop()}>
-                        <Icon type="user" className='user icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickPerson} />
-                        <div className='inputSearch'>
-                            <Input className='inputField' />
-                            <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} />
+                {this.state.isScene ?
+                    null :
+                    <div>
+                        <div className='topBox'>
+                            <div className='top' style={this.getStylesTop()}>
+                                <Icon type="user" className='user icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickPerson} />
+                                <div className='inputSearch'>
+                                    <Input className='inputField' />
+                                    <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className='mainBox'>
+                            {this.state.isPerson ? <Person className='side' /> : <div className='side' />}
+                            <Map changeRoot={this.changeRoot} className='map' />
                         </div>
                     </div>
+                }
+                
+                {this.state.isScene ? 
+                <div className='scene'>
+                    <Scene sceneID = {sceneID} /> 
                 </div>
-                <div className='mainBox'>
-                    {this.state.isPerson ? <Person className='side' /> : <div className='side' />}
-
-                    <Map changeRoot={this.changeRoot} className='map' />
-                </div>
+                : null}
 
             </div>
         )

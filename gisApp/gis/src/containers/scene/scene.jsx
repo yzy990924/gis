@@ -2,12 +2,13 @@ import React from 'react';
 import SceneMap from './sceneMap.jsx'
 
 class Scene extends React.Component {
-    
+
 
     render() {
+        const { sceneID  } = this.props;
         return (
-            <div id='main'>
-                <SceneMap/>
+            <div id='scene'>
+                <SceneMap sceneID ={sceneID}/>
             </div>
         )
     }
