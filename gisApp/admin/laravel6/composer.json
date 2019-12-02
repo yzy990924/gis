@@ -14,7 +14,8 @@
         "laravel/framework": "^6.0",
         "laravel/passport": "^8.0",
         "laravel/tinker": "^1.0",
-        "ext-mysqli":"*"
+        "ext-mysqli":"*",
+        "ext-json":"*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
