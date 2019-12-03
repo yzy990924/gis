@@ -28,5 +28,10 @@ class RegisterController extends Controller
         $q = mysqli_prepare($mysqli,$sql);
         mysqli_stmt_bind_param($q,'ss',$name,$password);
         mysqli_stmt_execute($q);
+
+
+        return response()->json([
+            'data' => 'user create.'
+        ],201);
     }
 }
