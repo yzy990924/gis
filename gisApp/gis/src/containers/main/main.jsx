@@ -13,15 +13,18 @@ class Main extends React.Component {
         this.state = {
             sid: '',
             isPerson: false,
-            isScene: false
+            isScene: false,
+            isSearchList: false,
+            searchlist:''
         }
         this.changeRoot = this.changeRoot.bind(this)
         this.onClickPerson = this.onClickPerson.bind(this)
+        this.onClickSearch = this.onClickSearch.bind(this)
     }
 
 
     componentWillMount() {
-        console.log('main')
+
         console.log(this.props)
 
     }
@@ -31,11 +34,46 @@ class Main extends React.Component {
 
             if(sceneID === 50){
                 this.setState({
-                    sceneID:1
+                    sceneID:3
                 })
             }else if(sceneID === 30){
                 this.setState({
+                    sceneID:4
+                })
+            }
+            else if(sceneID === 55){
+                this.setState({
                     sceneID:2
+                })
+            }
+            else if(sceneID === 35){
+                this.setState({
+                    sceneID:6
+                })
+            }
+            else if(sceneID === 39){
+                this.setState({
+                    sceneID:1
+                })
+            }
+            else if(sceneID === 45){
+                this.setState({
+                    sceneID:8
+                })
+            }
+            else if(sceneID === 53){
+                this.setState({
+                    sceneID:7
+                })
+            }
+            else if(sceneID === 29){
+                this.setState({
+                    sceneID:5
+                })
+            }
+            else if(sceneID === 48){
+                this.setState({
+                    sceneID:9
                 })
             }
         }
@@ -60,6 +98,12 @@ class Main extends React.Component {
             isPerson: !this.state.isPerson
         })
     }
+    onClickSearch(){
+        this.setState({
+            isSearchList: !this.state.isSearchList
+        })
+    }
+    handleSearch= (e) => { this.setState({ searchlist: e.target.value.trim() });console.log(this.state.searchlist) }
     render() {
         const sceneID = this.state.sceneID
         return (
@@ -71,14 +115,15 @@ class Main extends React.Component {
                             <div className='top' style={this.getStylesTop()}>
                                 <Icon type="user" className='user icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickPerson} />
                                 <div className='inputSearch'>
-                                    <Input className='inputField' />
-                                    <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} />
+                                    <Input className='inputField' onInput={this.handleSearch} />
+                                    <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickSearch}/>
                                 </div>
                             </div>
                         </div>
                         <div className='mainBox'>
                             {this.state.isPerson ? <Person className='side' /> : <div className='side' />}
                             <Map changeRoot={this.changeRoot} className='map' />
+                            {this.state.isSearchList? <Search  searchlist = {this.state.searchlist} isSearchList = {this.state.isSearchList} />: null}
                         </div>
                     </div>
                 }

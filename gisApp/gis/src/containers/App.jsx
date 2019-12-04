@@ -14,7 +14,7 @@ class App extends Component {
     componentWillMount() {
         const { history } = this.props
         const isLoginSave = window.localStorage.getItem('isLogin')
-        if (isLoginSave === 'false')
+        if (!isLoginSave)
             history.push('./login');
     }
 
@@ -23,7 +23,7 @@ class App extends Component {
             <div id="app">
                 <Contain>
                 <Router history={createBrowserHistory()}>
-                        <Route exact path="/" component={Main} />
+                        <Route exact path="/main" component={Main} />
                     </Router>
                 </Contain>
             </div>

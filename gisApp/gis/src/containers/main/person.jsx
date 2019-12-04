@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import SceneTough from '../../components/sceneTough'
 import { Button, Input } from 'antd'
 import '../../style/containers/person.css'
+import { fetchData } from '../../utils/request.js'
+
 class Person extends React.Component {
     constructor() {
         super();
@@ -36,6 +38,26 @@ class Person extends React.Component {
         this.setState({
             display: ['block', 'none', 'none']
         })
+
+        let request = {
+            method: 'POST',
+            body: JSON.stringify({
+                user_id:window.localStorage.getItem('user_id')
+            }),
+            headers: {
+                contentType: 'application/json'
+            }
+        }
+
+        fetchData('getScene', request)
+            .then(data => {
+                console.log(data)
+            })
+            .catch(e => {
+            })
+        
+        
+
     }
     onchangeBoxB() {
         this.setState({
@@ -66,8 +88,6 @@ class Person extends React.Component {
                     </div>
 
                     <div className='collection' style={this.getStylesA()}>
-
-                        <SceneTough />
                     </div>
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxA}>
 

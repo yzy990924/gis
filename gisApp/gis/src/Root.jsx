@@ -11,6 +11,7 @@ class Root extends Component {
 
     componentWillMount(){
         window.localStorage.setItem('sid','');
+        window.localStorage.clear()
     }
 
     render() {

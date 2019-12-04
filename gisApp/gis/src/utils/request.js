@@ -1,10 +1,17 @@
-import { camelizeKeys, decamelizeKeys } from 'humps'
+import {
+    camelizeKeys,
+    decamelizeKeys
+} from 'humps'
 
-export const API_ROOT = `https://localhost:3000/api`
+export const API_ROOT = `http://172.23.153.206:8085/laravel6/public/api`
 
-export function fetchData  (apiPath, request = {}) {
+export function fetchData(apiPath, request = {}) {
     const url = `${API_ROOT}/${apiPath}`;
-    const { headers, body, method } = request;
+    const {
+        headers,
+        body,
+        method
+    } = request;
     let customRequest = {};
     if (method) {
         customRequest.method = method.toUpperCase();
@@ -13,23 +20,26 @@ export function fetchData  (apiPath, request = {}) {
         customRequest.body = JSON.stringify(decamelizeKeys(JSON.parse(body)));
     }
     if (headers) {
-        const { contentType} = headers;
+        const {
+            contentType
+        } = headers;
         customRequest.headers = {};
-
         if (contentType) {
             customRequest.headers['Content-Type'] = contentType;
         }
     }
+
     return (
         fetch(url, customRequest)
-            .then(res => res.json().then(json => {
-        
-                if (!json.status) {
-                    return Promise.reject(json);
-                }
-                const camelizedJsondata = camelizeKeys(json);
-                return camelizedJsondata;
-                }
-            ))
+        .then(json => {
+            return json
+
+        })
+        .then(res => {
+            return res.json()
+        })
+
+
+
     );
 };
