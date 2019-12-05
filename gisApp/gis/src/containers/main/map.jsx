@@ -60,7 +60,7 @@ class Map extends Component {
     }
     getStyles() {
         let styleObj;
-        styleObj = { height: window.innerHeight*0.8, width: window.innerWidth*0.6 };
+        styleObj = { height: window.innerHeight*0.8, width: window.innerWidth };
 
         return styleObj;
     }

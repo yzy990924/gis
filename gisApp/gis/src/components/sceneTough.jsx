@@ -12,9 +12,9 @@ class SceneTough extends React.Component {
             id: '',
             isfetch: false
         })
-        const result = props
+        
         datarray = props.result
-        console.log(props.result)
+        console.log(props.type)
     }
 
     render() {

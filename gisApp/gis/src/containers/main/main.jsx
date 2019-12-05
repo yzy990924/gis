@@ -4,7 +4,7 @@ import Person from './person.jsx'
 import Map from './map.jsx'
 import Search from './search.jsx'
 import "../../style/containers/main.css"
-import { Icon, Input } from 'antd';
+import { Icon, Input, Drawer } from 'antd';
 import Scene from '../scene/scene.jsx'
 
 class Main extends React.Component {
@@ -15,7 +15,9 @@ class Main extends React.Component {
             isPerson: false,
             isScene: false,
             isSearchList: false,
-            searchlist:''
+            searchlist: '',
+            visible: false,
+            placement: 'left'
         }
         this.changeRoot = this.changeRoot.bind(this)
         this.onClickPerson = this.onClickPerson.bind(this)
@@ -29,51 +31,67 @@ class Main extends React.Component {
 
     }
 
+
+
+  showDrawer = () => {
+    this.setState({
+      visible: !this.state.visible,
+    });
+    console.log(this.state.placement)
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  };
+
+
     changeRoot(isScene, sceneID) {
         if (isScene) {
 
-            if(sceneID === 50){
+            if (sceneID === 50) {
                 this.setState({
-                    sceneID:3
+                    sceneID: 3
                 })
-            }else if(sceneID === 30){
+            } else if (sceneID === 30) {
                 this.setState({
-                    sceneID:4
-                })
-            }
-            else if(sceneID === 55){
-                this.setState({
-                    sceneID:2
+                    sceneID: 4
                 })
             }
-            else if(sceneID === 35){
+            else if (sceneID === 55) {
                 this.setState({
-                    sceneID:6
+                    sceneID: 2
                 })
             }
-            else if(sceneID === 39){
+            else if (sceneID === 35) {
                 this.setState({
-                    sceneID:1
+                    sceneID: 6
                 })
             }
-            else if(sceneID === 45){
+            else if (sceneID === 39) {
                 this.setState({
-                    sceneID:8
+                    sceneID: 1
                 })
             }
-            else if(sceneID === 53){
+            else if (sceneID === 45) {
                 this.setState({
-                    sceneID:7
+                    sceneID: 8
                 })
             }
-            else if(sceneID === 29){
+            else if (sceneID === 53) {
                 this.setState({
-                    sceneID:5
+                    sceneID: 7
                 })
             }
-            else if(sceneID === 48){
+            else if (sceneID === 29) {
                 this.setState({
-                    sceneID:9
+                    sceneID: 5
+                })
+            }
+            else if (sceneID === 48) {
+                this.setState({
+                    sceneID: 9
                 })
             }
         }
@@ -90,7 +108,7 @@ class Main extends React.Component {
 
     getStylesTop() {
         let styleObj;
-        styleObj = { width: window.innerWidth * 0.95 };
+        styleObj = { width: window.innerWidth  };
         return styleObj;
     }
     onClickPerson() {
@@ -98,12 +116,12 @@ class Main extends React.Component {
             isPerson: !this.state.isPerson
         })
     }
-    onClickSearch(){
+    onClickSearch() {
         this.setState({
             isSearchList: !this.state.isSearchList
         })
     }
-    handleSearch= (e) => { this.setState({ searchlist: e.target.value.trim() });console.log(this.state.searchlist) }
+    handleSearch = (e) => { this.setState({ searchlist: e.target.value.trim() }); console.log(this.state.searchlist) }
     render() {
         const sceneID = this.state.sceneID
         return (
@@ -111,28 +129,38 @@ class Main extends React.Component {
                 {this.state.isScene ?
                     null :
                     <div>
+                         <Drawer
+                                title="个人中心"
+                                placement={this.state.placement}
+                                closable={false}
+                                onClose={this.onClose}
+                                visible={this.state.visible}
+                                getContainer={false}
+                            >
+                                <Person />
+                            </Drawer>
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
-                                <Icon type="user" className='user icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickPerson} />
+                                <Icon type="user" className='user icon' style={{ color: '#efefef', fontSize: "30px" }}  onClick={this.showDrawer}/>
                                 <div className='inputSearch'>
                                     <Input className='inputField' onInput={this.handleSearch} />
-                                    <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickSearch}/>
+                                    <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickSearch} />
                                 </div>
                             </div>
                         </div>
                         <div className='mainBox'>
-                            {this.state.isPerson ? <Person className='side' /> : <div className='side' />}
+             
                             <Map changeRoot={this.changeRoot} className='map' />
-                            {this.state.isSearchList? <Search  searchlist = {this.state.searchlist} isSearchList = {this.state.isSearchList} />: null}
+                            {this.state.isSearchList ? <Search searchlist={this.state.searchlist} isSearchList={this.state.isSearchList} /> : <div />}
                         </div>
                     </div>
                 }
-                
-                {this.state.isScene ? 
-                <div className='scene'>
-                    <Scene sceneID = {sceneID} /> 
-                </div>
-                : null}
+
+                {this.state.isScene ?
+                    <div className='scene'>
+                        <Scene sceneID={sceneID} />
+                    </div>
+                    : null}
 
             </div>
         )

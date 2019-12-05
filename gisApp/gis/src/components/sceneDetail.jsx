@@ -1,19 +1,66 @@
 import React from 'react';
-
+import { Modal, Button, message } from 'antd';
 import { fetchData } from '../utils/request'
+import "../style/components/sceneDetail.css"
+let id
+const { confirm } = Modal;
+let sceneID = ''
+
+const success = () => {
+    message.success('This is a success message');
+  };
+  
+  const error = () => {
+    message.error('This is an error message');
+  };
+  
 
 
 class sceneDetail extends React.Component {
 
     constructor(props) {
         super();
-        const { sceneID  } = props;
+        sceneID = props;
         console.log(props)
+        id = window.localStorage.getItem('user_id')
+
     }
 
+    showConfirm() {
+
+        confirm({
+            title: '确定将其加入我的收藏中吗',
+            content: 'When clicked the OK button, this dialog will be closed after 1 second',
+            onOk() {
+                let request = {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        scene_id: sceneID,
+                        user_id: window.localStorage.getItem('user_id')
+                    }),
+                    headers: {
+                        contentType: 'application/json'
+                    }
+                }
+                fetchData('addScene', request)
+                    .then(data => {
+                        console.log(data.code)
+                        if (data.code === 0) {
+                            error()
+                        }
+                        else success()
+                    })
+                    .catch(e => {
+
+                    })
+            },
+            onCancel() { },
+        });
+    }
+    
 
     render() {
-        const datarray =  this.props
+        const datarray = this.props
         return (
             <div id='SceneTough'>
                 <div className='sceneBox'>
@@ -25,10 +72,13 @@ class sceneDetail extends React.Component {
                             <div className='type'>{datarray.datarray.scene_type}</div>
                             <div className='score'>{datarray.datarray.scene_score}</div>
                         </div>
-                        <div className = 'location'>{datarray.datarray.scene_location}</div>
-                        <div className = 'time'>{datarray.datarray.scene_time}</div>
+                        <div className='location'>{datarray.datarray.scene_location}</div>
+                        <div className='time'>{datarray.datarray.scene_time}</div>
                     </div>
-                    <div className = 'phone'>{datarray.datarray.scene_telephone}</div>
+                    <div className='phone'>{datarray.datarray.scene_telephone}</div>
+                </div>
+                <div onClick={this.handlecollection}>
+                    <Button onClick={this.showConfirm} >点击收藏</Button>
                 </div>
             </div>
         )

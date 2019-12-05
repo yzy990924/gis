@@ -5,7 +5,7 @@ import { Button, Input } from 'antd'
 import '../../style/containers/person.css'
 import { fetchData } from '../../utils/request.js'
 import '../../style/containers/search.css'
-let namelist  = []
+let namelist = []
 let typelist = []
 let loclist = []
 class Search extends React.Component {
@@ -13,35 +13,73 @@ class Search extends React.Component {
         super();
         this.state = {
             display: ['block', 'none', 'none'],
-            searchArray:[]
+            searchArray: [],
+            isfetch:false
         }
         this.onchangeBoxA = this.onchangeBoxA.bind(this)
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
         this.onchangeBoxC = this.onchangeBoxC.bind(this)
     }
-    componentWillMount(){
+    componentWillMount() {
         this.searchName()
     }
-    
-    searchName(){
-        const {isSearchList,searchlist} = this.props
+
+    searchName() {
+        const { isSearchList, searchlist } = this.props
         let api = ''
         let request
-        if(isSearchList){
-            if(1){
+        namelist = []
+        if (isSearchList) {
+            if (1) {
                 api = 'searchName';
                 request = {
                     method: 'POST',
                     body: JSON.stringify({
-                        name:searchlist
+                        name: searchlist
                     }),
                     headers: {
                         contentType: 'application/json'
                     }
                 }
                 fetchData(api, request)
+                    .then(data => {
+                        Object.keys(data).map((key, item) => {
+                            request = {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    scene_id: data[key].id
+                                }),
+                                headers: {
+                                    contentType: 'application/json'
+                                }
+                            }
+                            fetchData('hover', request)
+                                .then(data => {
+                                    namelist[key] = data
+                                })
+                                .catch(e => {
+                                })
+                        })
+
+
+                    })
+                    .catch(e => {
+                    })
+            }
+        }
+        else {
+            request = {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: searchlist
+                }),
+                headers: {
+                    contentType: 'application/json'
+                }
+            }
+            fetchData(api, request)
                 .then(data => {
-                    Object.keys(data).map((key,item)=>{
+                    Object.keys(data).map((key, item) => {
                         request = {
                             method: 'POST',
                             body: JSON.stringify({
@@ -52,166 +90,136 @@ class Search extends React.Component {
                             }
                         }
                         fetchData('hover', request)
-                        .then(data => {
-                            namelist [key]= data
-                        })
-                        .catch(e => {
-                        })})
+                            .then(data => {
+                                namelist[key] = data
 
-    
+                            })
+                            .catch(e => {
+                            })
+                    })
+
                 })
                 .catch(e => {
-                })  
-            }
+                })
         }
-        else{
-            request = {
-                method: 'POST',
-                body: JSON.stringify({
-                    name:searchlist
-                }),
-                headers: {
-                    contentType: 'application/json'
-                }
-            }
-            fetchData(api, request)
-            .then(data => {
-                Object.keys(data).map((key,item)=>{
-                    request = {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            scene_id: data[key].id
-                        }),
-                        headers: {
-                            contentType: 'application/json'
-                        }
-                    }
-                    fetchData('hover', request)
-                    .then(data => {
-                        namelist [key]= data
-        
-                    })
-                    .catch(e => {
-                    })})
-
-            })
-            .catch(e => {
-            })
-        }
+        this.setState({
+            isfetch:true
+        })
     }
-    componentWillMount(){
-        this.searchName()
+    componentWillMount() {
         this.onchangeBoxA()
     }
-    searchLoc(){
-        const {isSearchList,searchlist} = this.props
+    searchLoc() {
+        const { isSearchList, searchlist } = this.props
         let api = ''
         let request
-        if(isSearchList){
-            if(1){
+        loclist = []
+        if (isSearchList) {
+            if (1) {
                 api = 'searchLocation'
-                        request = {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                location:searchlist
-                            }),
-                            headers: {
-                                contentType: 'application/json'
-                            }
-                        }
-            fetchData(api, request)
-            .then(data => {
-                  Object.keys(data).map((key,item)=>{
-                    request = {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            scene_id: data[key].id
-                        }),
-                        headers: {
-                            contentType: 'application/json'
-                        }
-                    }
-                    fetchData('hover', request)
-                    .then(data => {
-                        loclist [key]= data
-        
-                    })
-                    .catch(e => {
-                    })})
-            })
-            .catch(e => {
-            })
-            }
-        }  
-    }
-
-    searchType(){
-        const {isSearchList,searchlist} = this.props
-        let api = ''
-        let request
-        if(isSearchList){
-            if(1){
-                api = 'searchType' 
                 request = {
                     method: 'POST',
                     body: JSON.stringify({
-                        type:searchlist
+                        location: searchlist
                     }),
                     headers: {
                         contentType: 'application/json'
                     }
                 }
-            fetchData(api, request)
-            .then(data => {
-                Object.keys(data).map((key,item)=>{
-                    request = {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            scene_id: data[key].id
-                        }),
-                        headers: {
-                            contentType: 'application/json'
-                        }
-                    }
-                    fetchData('hover', request)
-                    .then(otherdata => {
-                        console.log(otherdata)
-                        typelist[key] = otherdata        
+                fetchData(api, request)
+                    .then(data => {
+                        Object.keys(data).map((key, item) => {
+                            request = {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    scene_id: data[key].id
+                                }),
+                                headers: {
+                                    contentType: 'application/json'
+                                }
+                            }
+                            fetchData('hover', request)
+                                .then(data => {
+                                    loclist[key] = data
+
+                                })
+                                .catch(e => {
+                                })
+                        })
                     })
                     .catch(e => {
-                    })})
-
-
-            })
-            .catch(e => {
-            }) 
+                    })
             }
         }
-         
+    }
+
+    searchType() {
+        const { isSearchList, searchlist } = this.props
+        let api = ''
+        let request
+        typelist = []
+        if (isSearchList) {
+            if (1) {
+                api = 'searchType'
+                request = {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        type: searchlist
+                    }),
+                    headers: {
+                        contentType: 'application/json'
+                    }
+                }
+                fetchData(api, request)
+                    .then(data => {
+                        Object.keys(data).map((key, item) => {
+                            request = {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    scene_id: data[key].id
+                                }),
+                                headers: {
+                                    contentType: 'application/json'
+                                }
+                            }
+                            fetchData('hover', request)
+                                .then(otherdata => {
+                                    typelist[key] = otherdata
+                                })
+                                .catch(e => {
+                                })
+                        })
+
+
+                    })
+                    .catch(e => {
+                    })
+            }
+        }
+
     }
 
 
     getStylesA() {
         let styleObj;
-        styleObj = { display:this.state.display[0] };
+        styleObj = { display: this.state.display[0] };
 
         return styleObj;
     }
     getStylesB() {
         let styleObj;
-        styleObj = { display:this.state.display[1] };
+        styleObj = { display: this.state.display[1] };
 
         return styleObj;
     }
     getStylesC() {
         let styleObj;
-        styleObj = { display:this.state.display[2] };
+        styleObj = { display: this.state.display[2] };
 
         return styleObj;
     }
 
     onchangeBoxA() {
-
         this.setState({
             display: ['block', 'none', 'none']
         })
@@ -231,6 +239,7 @@ class Search extends React.Component {
         this.searchType()
     }
     render() {
+        const display = this.state
 
         return (
             <div id='Search'>
@@ -246,29 +255,32 @@ class Search extends React.Component {
                             类别
                         </Button>
                     </div>
-
-                    <div className='collection' style={this.getStylesA()} onClick={this.onchangeBoxA}>
-                        { 
-                            Object.keys(namelist).map((key,item)=>
-                            <SceneTough key={item} result = {namelist[key]}></SceneTough>
-                                 )
-                        }
-                    </div>
+                    {this.state.isfetch ?
+                        <div className='collection' onClick={this.onchangeBoxA}>
+                            {
+                                Object.keys(namelist).map((key, item) => 
+                                    <SceneTough key={item} result={namelist[key]} />
+                                )
+                            }
+                        </div> : null}
+                    {display[1]==="block"?
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxB}>
-                    {
-                            Object.keys(loclist).map((key,item)=>
-                            <SceneTough key={item} result = {loclist[key]}></SceneTough>
-                                 )
+                        {
+                            Object.keys(loclist).map((key, item) =>
+                                <SceneTough key={item} result={loclist[key]}></SceneTough>
+                            )
                         }
-                    </div>
+                    </div>:null}
+                    {display[2]==="block"?
                     <div className='profile' style={this.getStylesC()} onClick={this.onchangeBoxC}>
 
-                    {
-                            Object.keys(typelist).map((key,item)=>
-                            <SceneTough key={item} result = {typelist[key]}></SceneTough>
-                                 )
+                        {
+                            Object.keys(typelist).map((key, item) =>
+                                <SceneTough key={item} result={typelist[key]}></SceneTough>
+                            )
                         }
-                    </div>
+                    </div>:null}
+                   
                 </div>
             </div>
         )
