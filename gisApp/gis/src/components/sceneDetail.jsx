@@ -62,7 +62,7 @@ class sceneDetail extends React.Component {
     render() {
         const datarray = this.props
         return (
-            <div id='SceneTough'>
+            <div id='SceneDetail'>
                 <div className='sceneBox'>
                     <div className='head'>
                         {datarray.datarray.scene_name}

@@ -60,7 +60,7 @@ class Map extends Component {
     }
     getStyles() {
         let styleObj;
-        styleObj = { height: window.innerHeight*0.8, width: window.innerWidth };
+        styleObj = { height: window.innerHeight*0.9, width: window.innerWidth };
 
         return styleObj;
     }
@@ -96,7 +96,10 @@ class Map extends Component {
                     panMouseButton: 'right',
                     rotateMouseButton: 'left',
                     animation:'true',
-                    damping:2
+                    damping:2,
+                    minDistance:80,
+                    maxDistance: 150,
+                    zoomSensitivity:0.5
                 },
                 postEffect: {
                     enable: true,
