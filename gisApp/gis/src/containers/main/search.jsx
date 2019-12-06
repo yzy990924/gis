@@ -14,7 +14,7 @@ class Search extends React.Component {
         this.state = {
             display: ['block', 'none', 'none'],
             searchArray: [],
-            isfetch:false
+            isfetch:[false,false,false]
         }
         this.onchangeBoxA = this.onchangeBoxA.bind(this)
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
@@ -56,6 +56,9 @@ class Search extends React.Component {
                             fetchData('hover', request)
                                 .then(data => {
                                     namelist[key] = data
+                                    this.setState({
+                                        isfetch:[true,false,false]
+                                    })
                                 })
                                 .catch(e => {
                                 })
@@ -92,7 +95,9 @@ class Search extends React.Component {
                         fetchData('hover', request)
                             .then(data => {
                                 namelist[key] = data
-
+                                this.setState({
+                                    isfetch:[true,false,false]
+                                })
                             })
                             .catch(e => {
                             })
@@ -141,7 +146,9 @@ class Search extends React.Component {
                             fetchData('hover', request)
                                 .then(data => {
                                     loclist[key] = data
-
+                                    this.setState({
+                                        isfetch:[false,true,false]
+                                    })
                                 })
                                 .catch(e => {
                                 })
@@ -185,6 +192,9 @@ class Search extends React.Component {
                             fetchData('hover', request)
                                 .then(otherdata => {
                                     typelist[key] = otherdata
+                                    this.setState({
+                                        isfetch:[false,false,true]
+                                    })
                                 })
                                 .catch(e => {
                                 })
@@ -255,7 +265,7 @@ class Search extends React.Component {
                             类别
                         </Button>
                     </div>
-                    {this.state.isfetch ?
+                    {this.state.isfetch[0] ?
                         <div className='collection' onClick={this.onchangeBoxA}>
                             {
                                 Object.keys(namelist).map((key, item) => 
@@ -263,7 +273,7 @@ class Search extends React.Component {
                                 )
                             }
                         </div> : null}
-                    {display[1]==="block"?
+                    {this.state.isfetch[1]?
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxB}>
                         {
                             Object.keys(loclist).map((key, item) =>
@@ -271,7 +281,7 @@ class Search extends React.Component {
                             )
                         }
                     </div>:null}
-                    {display[2]==="block"?
+                    {this.state.isfetch[2]?
                     <div className='profile' style={this.getStylesC()} onClick={this.onchangeBoxC}>
 
                         {

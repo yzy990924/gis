@@ -67,10 +67,10 @@ class Map extends Component {
     getOption = () => {
         return {
 
-            backgroundColor: '#3c3c3c',
+            backgroundColor: '#e4e5e4',
             geo3D: {
                 map: '天津',
-                environment: '#3c3c3c',
+                environment: '#e4e5e4',
                 shading: 'lambert',
                 layoutSize: '100%',
                 light: {

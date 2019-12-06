@@ -1,7 +1,7 @@
 
 #main{
     display: flex;
-    background-color: #373737;
+    background-color: #e0e0e0;
     flex-direction: column;
 }
 
@@ -18,13 +18,12 @@
 }
 
 .top{
-    width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    margin-top:1%;
-
     margin-bottom: 0.5%;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
 }
 .inputSearch{
     display:flex
@@ -35,6 +34,6 @@
 }
 .topBox{
     width: 100%;
-    background-color: rgba(255,255,255,0.03);
+    background-color: #fefefd;
     margin-top: 0;
 }

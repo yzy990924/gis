@@ -17,7 +17,8 @@ class Main extends React.Component {
             isSearchList: false,
             searchlist: '',
             visible: false,
-            placement: 'left'
+            placement: 'left',
+            value: '',
         }
         this.changeRoot = this.changeRoot.bind(this)
         this.onClickPerson = this.onClickPerson.bind(this)
@@ -122,6 +123,15 @@ class Main extends React.Component {
         })
     }
     handleSearch = (e) => { this.setState({ searchlist: e.target.value.trim() }); console.log(this.state.searchlist) }
+
+    setValue = value => {
+        if(value){
+            this.setState({
+                isScene:false
+            })
+        }
+      }
+
     render() {
         const sceneID = this.state.sceneID
         return (
@@ -158,7 +168,7 @@ class Main extends React.Component {
 
                 {this.state.isScene ?
                     <div className='scene'>
-                        <Scene sceneID={sceneID} />
+                        <Scene sceneID={sceneID} setValue={this.setValue} />
                     </div>
                     : null}
 

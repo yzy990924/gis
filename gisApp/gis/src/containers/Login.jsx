@@ -81,6 +81,7 @@ class Login extends React.Component {
                 console.log(data.user_id)
                 window.localStorage.setItem('user_id',data.user_id)
                 const id = window.localStorage.getItem('user_id')
+                window.localStorage.setItem('user_id',data.user_id)
                 console.log(id)
                 if (data.code === 1) {
                     this.setData({

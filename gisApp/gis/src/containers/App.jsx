@@ -16,6 +16,7 @@ class App extends Component {
         const isLoginSave = window.localStorage.getItem('isLogin')
         if (!isLoginSave)
             history.push('./login');
+        console.log(this.props)
     }
 
     render() {
