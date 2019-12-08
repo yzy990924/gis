@@ -1,0 +1,58 @@
+#SceneDetail {
+    background-color: rgba(213,213,213,0.2);
+    position: absolute;
+    width: 26%;
+    float: left;
+    z-index: 1;
+    border-radius: 8px;
+    color: black;
+    padding: 50px 0px 20px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main {
+    padding-right: 28px;
+}
+.head {
+    font-size: 20px;
+    height: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    background-color: #eeeeee;
+    /* background-color: white; */
+    opacity:0.7;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.main {
+    font-size: 15px;
+    position: relative;
+    animation:mymove 2s;
+    -webkit-animation:mymove 2s; /*Safari and Chrome*/
+    animation-fill-mode: forwards;
+    animation-timing-function:ease;
+}
+span {
+    padding-left: 5px;
+}
+
+@keyframes mymove
+{
+    from {left:0px;opacity: 0.5;}
+    to {left:20px;opacity: 1;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+    from {left:0px;opacity: 0.5;}
+    to {left:20px;opacity: 1;}
+}
+
+.main div {
+    padding-top: 5px;
+}
+
+.addfavbtn {
+    padding-top: 8px;
+    padding-left: 20px;
+}

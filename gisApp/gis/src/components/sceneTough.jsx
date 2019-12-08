@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { fetchData } from '../utils/request'
+import "../style/components/sceneTough.css"
+
 let list = ''
 let datarray = []
 
