@@ -20,6 +20,7 @@ class Search extends React.Component {
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
         this.onchangeBoxC = this.onchangeBoxC.bind(this)
     }
+
     componentWillMount() {
         this.searchName()
     }
@@ -110,9 +111,6 @@ class Search extends React.Component {
         this.setState({
             isfetch:true
         })
-    }
-    componentWillMount() {
-        this.onchangeBoxA()
     }
     searchLoc() {
         const { isSearchList, searchlist } = this.props

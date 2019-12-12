@@ -4,6 +4,7 @@ import SceneTough from '../../components/sceneTough'
 import { Button, Input } from 'antd'
 import '../../style/containers/person.css'
 import { fetchData } from '../../utils/request.js'
+import { createSign } from 'crypto';
 let myscene = []
 class Person extends React.Component {
     constructor() {
@@ -15,8 +16,53 @@ class Person extends React.Component {
         this.onchangeBoxA = this.onchangeBoxA.bind(this)
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
         this.onchangeBoxC = this.onchangeBoxC.bind(this)
-    }
 
+    }
+    UNSAFE_componentWillMount(){
+        this.fetch()
+    }
+    fetch(){
+        myscene = []
+        let request = {
+            method: 'POST',
+            body: JSON.stringify({
+                user_id:window.localStorage.getItem('user_id')
+            }),
+            headers: {
+                contentType: 'application/json'
+            }
+        }
+    
+        fetchData('getScene', request)
+            .then(data => {
+                console.log(data)
+                Object.keys(data).map((key, item) => {
+                    request = {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            scene_id: data[key]
+                        }),
+                        headers: {
+                            contentType: 'application/json'
+                        }
+                    }
+                    fetchData('hover', request)
+                        .then(otherdata => {
+                            myscene = otherdata
+                            this.setState({
+                                ismy:true
+                            })
+                            console.log('ji')
+                        })
+                        .catch(e => {
+                        })
+                })
+            })
+            .catch(e => {
+            })
+    
+    
+    }
     getStylesA() {
         let styleObj;
         styleObj = { display:this.state.display[0] };
@@ -38,45 +84,7 @@ class Person extends React.Component {
     onchangeBoxA() {
         this.setState({
             display: ['block', 'none', 'none']
-        })
-
-        let request = {
-            method: 'POST',
-            body: JSON.stringify({
-                user_id:window.localStorage.getItem('user_id')
-            }),
-            headers: {
-                contentType: 'application/json'
-            }
-        }
-
-        fetchData('getScene', request)
-            .then(data => {
-                Object.keys(data).map((key, item) => {
-                    request = {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            scene_id: data[key].id
-                        }),
-                        headers: {
-                            contentType: 'application/json'
-                        }
-                    }
-                    fetchData('hover', request)
-                        .then(otherdata => {
-                            myscene = otherdata
-                            this.setState({
-                                ismy:true
-                            })
-                        })
-                        .catch(e => {
-                        })
-                })
-            })
-            .catch(e => {
-            })
-        
-        
+        }) 
 
     }
     onchangeBoxB() {
@@ -91,7 +99,7 @@ class Person extends React.Component {
         })
     }
     render() {
-        const display  =  this.state.display
+
         return (
             <div id='Person'>
                 <div className='personBox'>
@@ -108,7 +116,7 @@ class Person extends React.Component {
                     </div>
 
                     <div className='collection' style={this.getStylesA()}>
-                        {this.state.ismy?<SceneTough result = {myscene} type={"myscene"} />:null}
+                     {this.state.ismy?<SceneTough result = {myscene} type={"myscene"} />:null}  
                     </div>
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxA}>
 
