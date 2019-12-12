@@ -151,10 +151,15 @@ class Main extends React.Component {
                             </Drawer>
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
-                                <Icon type="user" className='user icon' style={{ color: '#efefef', fontSize: "30px" }}  onClick={this.showDrawer}/>
+                                <div className = 'usericon' onClick={this.showDrawer}>
+                                <Icon type="user" className='user icon' style={{ color: '#ffffff', fontSize: "40px" }}  onClick={this.showDrawer}/>
+                                    </div> 
+            
                                 <div className='inputSearch'>
-                                    <Input className='inputField' onInput={this.handleSearch} />
-                                    <Icon type="search" className=' search icon' style={{ color: '#efefef', fontSize: "30px" }} onClick={this.onClickSearch} />
+                                    <Input className='inputField' onInput={this.handleSearch} style = {{height:'40px'}} />
+                                    <div className = 'searchicon'>
+                                    <Icon type="search" className=' search icon' style={{ color: '#ffffff', fontSize: "40px" }} onClick={this.onClickSearch} />
+                                    </div>
                                 </div>
                             </div>
                         </div>

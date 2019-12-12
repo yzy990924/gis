@@ -144,16 +144,16 @@ class Login extends React.Component {
                         <div className='loginTable'>
                             <div className='InputTable'>
                                 <div className='username'>
-                                    <Input placeholder='用户名' onInput={this.handleInputUname} />
+                                    <Input placeholder='用户名' onInput={this.handleInputUname}  style = {{height:"50px",width:"400px", marginBottom:"8%"}}/>
                                 </div>
                                 <div className='passwd'>
-                                    <Input.Password placeholder='密码' onInput={this.handleInputP} />
+                                    <Input.Password placeholder='密码' onInput={this.handleInputP} style = {{height:"50px",width:"400px", marginBottom:"8%"}} />
                                 </div>
                             </div>
                             <div className='ButtonTable'>
                                 <div className='loginButton'>
-                                    <Button type="primary" ghost loading loading={this.state.iconLoading} onClick={this.handleClickButton}>登录</Button>
-                                    <Button ghost onClick={this.handleWillRegister}>注册</Button>
+                                    <Button type="primary" loading loading={this.state.iconLoading} onClick={this.handleClickButton} style = {{height:"50px",width:"150px",backgroundColor:"#ffa500",borderColor:"#ffa500"}}>登录</Button>
+                                    <Button onClick={this.handleWillRegister} style = {{height:"50px",width:"150px"}}>注册</Button>
                                 </div>
                             </div>
                         </div>
@@ -164,16 +164,16 @@ class Login extends React.Component {
                         <div className='loginTable'>
                             <div className='InputTable'>
                                 <div className='username'>
-                                    <Input placeholder='用户名' onInput={this.handleInputUname} />
+                                    <Input placeholder='用户名' onInput={this.handleInputUname} style = {{height:"50px",width:"400px", marginBottom:"8%"}} />
                                 </div>
                                 <div className='passwd'>
-                                    <Input.Password placeholder='密码' onInput={this.handleInputP} />
+                                    <Input.Password placeholder='密码' onInput={this.handleInputP} style = {{height:"50px",width:"400px", marginBottom:"8%"}} />
                                 </div>
                             </div>
                             <div className='ButtonTable'>
                                 <div className='loginButton'>
-                                    <Button type="primary" ghost loading loading={this.state.iconLoading} onClick={this.handleClickRegister}>确定</Button>
-                                    <Button ghost>取消</Button>
+                                    <Button type="primary"loading loading={this.state.iconLoading} onClick={this.handleClickRegister} style = {{height:"50px",width:"150px",backgroundColor:"#ffa500",borderColor:"#ffa500"}}>确定</Button>
+                                    <Button style = {{height:"50px",width:"150px"}}>取消</Button>
                                 </div>
                             </div>
                         </div>

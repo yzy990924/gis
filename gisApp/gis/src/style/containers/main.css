@@ -1,7 +1,11 @@
-
+body{
+    background-image: url('../../assets/loginbg.png');
+    background-repeat:no-repeat;
+    background-origin:content-box;
+    background-position:center;
+}
 #main{
     display: flex;
-    background-color: #e0e0e0;
     flex-direction: column;
 }
 
@@ -27,7 +31,7 @@
 
 }
 .inputSearch{
-    display:flex
+    display: flex;
 }
 .inputField{
     flex:1
@@ -35,7 +39,19 @@
 }
 .topBox{
     width: 100%;
-    background-color: #fefefd;
     margin-top: 0;
-    height:10%
+    height:10%;
+    background-color: #fafafa;
+    display: flex;
+}
+.searchicon{
+    background-color: #1890ff;
+    margin-right: 117px;
+}
+.usericon{
+    background-color:#1890ff;
+    height:42px;
+    width:42px;
+    border-radius: 100%;
+    margin-left: 117px;
 }

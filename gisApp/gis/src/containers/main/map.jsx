@@ -3,7 +3,6 @@ import echarts from 'echarts';
 import 'echarts-gl';
 import PropTypes from 'prop-types';
 import ReactEcharts from 'echarts-for-react';
-
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/visualMap';
@@ -17,14 +16,14 @@ import 'echarts/lib/chart/pie';
 
 var geoCoordMap = {
     '方特': [117.74575, 39.160382],
-    '北辰郊野公园': [117.158865,39.277851],
-    "五大道": [117.209997,39.116392],
-    "人民公园":[117.224576,39.111156],
-    "津门故里":[117.199184,39.149532],
-    "天津义和团纪念馆":[117.164626,39.152006],
-    "梁启超纪念馆":[117.206146,39.142874],
-    "东丽湖":[117.498531,39.16477],
-    "张学良故居博物馆(少帅府)":[117.208211,39.129784],
+    '北辰郊野公园': [117.158865, 39.277851],
+    "五大道": [117.209997, 39.116392],
+    "人民公园": [117.224576, 39.111156],
+    "津门故里": [117.199184, 39.149532],
+    "天津义和团纪念馆": [117.164626, 39.152006],
+    "梁启超纪念馆": [117.206146, 39.142874],
+    "东丽湖": [117.498531, 39.16477],
+    "张学良故居博物馆(少帅府)": [117.208211, 39.129784],
 
 }
 
@@ -35,7 +34,6 @@ var convertData = function (data) {
         if (geoCoord) {//如果有坐标
             res.push({//创建对象数组，
                 name: data[i].name,
-                loca: data[i].loca,
                 value: geoCoord.concat(data[i].value)  //用连接数组的形式将value值加入
             });
             //res.push(geoCoord.concat(data[i].value));
@@ -60,17 +58,15 @@ class Map extends Component {
     }
     getStyles() {
         let styleObj;
-        styleObj = { height: window.innerHeight*0.9, width: window.innerWidth };
+        styleObj = { height: window.innerHeight * 0.9, width: window.innerWidth };
 
         return styleObj;
     }
     getOption = () => {
         return {
-
-            backgroundColor: '#e4e5e4',
             geo3D: {
                 map: '天津',
-                environment: '#e4e5e4',
+                environment:'#ffffff',
                 shading: 'lambert',
                 layoutSize: '100%',
                 light: {
@@ -90,16 +86,16 @@ class Map extends Component {
                     }
                 },
                 viewControl: {
-                    distance: 130,
+                    distance: 120,
                     autoRotate: true,
                     autoRotateAfterStill: 1,
                     panMouseButton: 'right',
                     rotateMouseButton: 'left',
-                    animation:'true',
-                    damping:2,
-                    minDistance:80,
+                    animation: 'true',
+                    damping: 2,
+                    minDistance: 80,
                     maxDistance: 150,
-                    zoomSensitivity:0.5
+                    zoomSensitivity: 0.5
                 },
                 postEffect: {
                     enable: true,
@@ -118,28 +114,134 @@ class Map extends Component {
                         fstop: 1
                     }
                 },
-           
+
                 itemStyle: {
                     borderWidth: 0.5,
-                    borderColor: '#838B83'
+                    borderColor: '#fff'
+                },
+                regions: [{				// 可对单个地图区域进行设置
+                    name: '河西区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {	
+                        color: '#313695',
+                    },
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '河东区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#4575b4'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '和平区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#ffc0ff'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '南开区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#abd9e9'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '河北区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#74add1'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '红桥区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#fd5f00'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '东丽区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#f46d43'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '西青区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#4575b4'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '津南区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#0f4c80'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '北辰区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#3e93ef'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '武清区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#3a5fc8'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '宝坻区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#5d3fc1'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '宁河区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#abd9e9'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '静海区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        color: '#abd9e9'
+                    }
+                },
+                {				// 可对单个地图区域进行设置
+                    name: '滨海新区',		// 所对应的地图区域的名称
+                    //regionHeight: '',			// 区域的高度，可以设置不同的高度用来表达数据的大小。当 GeoJSON 为建筑的数据时，也可以通过这个值表示简直的高度。
+                    itemStyle: {				// 单个区域的样式设置
+                        colorr: '#e0f3f8'
+                    }
                 },
 
+                ],
             },
             series: [
                 {
                     type: 'bar3D',
                     coordinateSystem: 'geo3D',
                     data: convertData([
-                        { name: "方特", value: 50,loca:"hhh" },
-                        { name: "北辰郊野公园", value: 30,loca:"hhh" },
-                        { name: "五大道", value: 55,loca:"hhh"},
-                        { name: "人民公园", value:35,loca:"hhh" },
-                        { name: "津门故里", value: 39,loca:"hhh"},
-                        { name: "天津义和团纪念馆", value: 45,loca:"hhh"},
-                        { name: "梁启超纪念馆", value:53,loca:"hhh"},
-                        { name: "东丽湖", value:29,loca:"hhh"},
-                        { name: "张学良故居博物馆(少帅府)", value:48,loca:"hhh"}
-  
+                        { name: "方特", value: 50, loca: "hhh" },
+                        { name: "北辰郊野公园", value: 30, loca: "hhh" },
+                        { name: "五大道", value: 55, loca: "hhh" },
+                        { name: "人民公园", value: 35, loca: "hhh" },
+                        { name: "津门故里", value: 39, loca: "hhh" },
+                        { name: "天津义和团纪念馆", value: 45, loca: "hhh" },
+                        { name: "梁启超纪念馆", value: 53, loca: "hhh" },
+                        { name: "东丽湖", value: 29, loca: "hhh" },
+                        { name: "张学良故居博物馆(少帅府)", value: 48, loca: "hhh" }
+
                     ]),
                     barSize: 1, //柱子粗细
                     shading: 'lambert',
@@ -159,17 +261,6 @@ class Map extends Component {
                     }
                 }
             ],
-            visualMap: {
-                max: 50,
-                calculable: true,
-                realtime: false,
-                inRange: {
-                    color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
-                },
-                outOfRange: {
-                    colorAlpha: 0
-                }
-            },
 
         }
 
@@ -179,8 +270,8 @@ class Map extends Component {
             sceneId: param.value[2],
             isScene: true
         })
-        const {changeRoot} = this.props;
-        changeRoot(this.state.isScene,this.state.sceneId)
+        const { changeRoot } = this.props;
+        changeRoot(this.state.isScene, this.state.sceneId)
     }
     render() {
         let onEvents = {

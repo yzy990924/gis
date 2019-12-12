@@ -1,3 +1,29 @@
 #scene{
     display: flex;
 }
+
+.back{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 100000;
+    height: 54px;
+    width: 54px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.SceneDetail{
+    position: absolute;
+    height: 100%;
+    left: 10px;
+    z-index: 100;
+    top: 78px;
+    background: #fff;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 3%;
+}

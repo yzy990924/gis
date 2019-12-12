@@ -16,7 +16,7 @@ class Root extends Component {
 
     render() {
         return (
-            <div id="Root">
+            <div id="Root" >
                 <Contain>
                     <Router history={createBrowserHistory()}>
                         <Switch>
