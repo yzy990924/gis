@@ -101,18 +101,18 @@ class Scene extends React.Component {
                 <div id='scenemorebx'>
                     {this.state.ishotel ?
                         <div className='hotel otherbox'>
-                            <div className = 'hotelname top'>HOTEL</div>
+                            <div className = 'hotelname topic'>HOTEL</div>
                             {Object.keys(hotel).map((key, item) => <SceneTough key={item} result={hotel[key]} type={"hotel"}></SceneTough>)}
                         </div> : null}
                     {this.state.isres ?
                         <div className='res otherbox'>
-                            <div className = 'resname top'>RESTAURANT</div>
+                            <div className = 'resname topic'>RESTAURANT</div>
                             {Object.keys(restaurant).map((key, item) => <SceneTough key={item} result={restaurant[key]} type={"res"}></SceneTough>)}
                         </div>
                         : null}
                     {this.state.istra ?
                         <div className="tra otherbox">
-                            <div className = 'traname top'>TRAFFIC</div>
+                            <div className = 'traname topic'>TRAFFIC</div>
                             {Object.keys(traffic).map((key, item) => <SceneTough key={item} result={traffic[key]} type={"tra"}></SceneTough>)}
                         </div>
                         : null}

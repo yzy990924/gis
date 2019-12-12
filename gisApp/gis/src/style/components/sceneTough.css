@@ -4,6 +4,10 @@
     padding-bottom: 2%;
     /* flex-direction: column-reverse; */
 }
+#Myscene{
+    display: flex;
+    padding-bottom: 2%;
+}
 .toughhead{
     font-size: 20px;
     height: 40px;
