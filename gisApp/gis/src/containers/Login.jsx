@@ -30,7 +30,6 @@ class Login extends React.Component {
    
 
     componentDidUpdate(nextProps) {
-
         const { history } = nextProps;
         const isLogin  = window.localStorage.getItem('isLogin')
         if (this.state.isLogin ) {

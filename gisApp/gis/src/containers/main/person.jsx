@@ -4,6 +4,7 @@ import SceneTough from '../../components/sceneTough'
 import { Button, Input } from 'antd'
 import '../../style/containers/person.css'
 import { fetchData } from '../../utils/request.js'
+import { createSign } from 'crypto';
 let myscene = []
 class Person extends React.Component {
     constructor() {
@@ -15,15 +16,13 @@ class Person extends React.Component {
         this.onchangeBoxA = this.onchangeBoxA.bind(this)
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
         this.onchangeBoxC = this.onchangeBoxC.bind(this)
+
     }
-
-   componentWillMount(){
-       console.log(window.localStorage.getItem('user_id'))
-       this.fetch()
-   }
-
+    UNSAFE_componentWillMount(){
+        this.fetch()
+    }
     fetch(){
-        console.log(window.localStorage.getItem('user_id'))
+        myscene = []
         let request = {
             method: 'POST',
             body: JSON.stringify({
@@ -33,9 +32,10 @@ class Person extends React.Component {
                 contentType: 'application/json'
             }
         }
-
+    
         fetchData('getScene', request)
             .then(data => {
+                console.log(data)
                 Object.keys(data).map((key, item) => {
                     request = {
                         method: 'POST',
@@ -52,6 +52,7 @@ class Person extends React.Component {
                             this.setState({
                                 ismy:true
                             })
+                            console.log('ji')
                         })
                         .catch(e => {
                         })
@@ -59,6 +60,8 @@ class Person extends React.Component {
             })
             .catch(e => {
             })
+    
+    
     }
     getStylesA() {
         let styleObj;
@@ -96,7 +99,7 @@ class Person extends React.Component {
         })
     }
     render() {
-        const display  =  this.state.display
+
         return (
             <div id='Person'>
                 <div className='personBox'>
@@ -113,7 +116,7 @@ class Person extends React.Component {
                     </div>
 
                     <div className='collection' style={this.getStylesA()}>
-                        {this.state.ismy?<SceneTough result = {myscene} type={"myscene"} />:null}
+                     {this.state.ismy?<SceneTough result = {myscene} type={"myscene"} />:null}  
                     </div>
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxA}>
 

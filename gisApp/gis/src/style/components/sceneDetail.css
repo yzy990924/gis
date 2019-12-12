@@ -6,7 +6,7 @@
     z-index: 1;
     border-radius: 8px;
     color: black;
-    padding: 50px 0px 20px 0px;
+    padding: 5% 0px 20px 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .main {
@@ -32,6 +32,14 @@
     animation-fill-mode: forwards;
     animation-timing-function:ease;
 }
+.phone{
+    font-size: 15px;
+    position: relative;
+    animation:mymove 2s;
+    -webkit-animation:mymove 2s; /*Safari and Chrome*/
+    animation-fill-mode: forwards;
+    animation-timing-function:ease;
+}
 span {
     padding-left: 5px;
 }
@@ -39,7 +47,7 @@ span {
 @keyframes mymove
 {
     from {left:0px;opacity: 0.5;}
-    to {left:20px;opacity: 1;}
+    to {left:2%;opacity: 1;}
 }
 
 @-webkit-keyframes mymove /*Safari and Chrome*/

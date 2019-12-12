@@ -6,6 +6,7 @@ import Search from './search.jsx'
 import "../../style/containers/main.css"
 import { Icon, Input, Drawer } from 'antd';
 import Scene from '../scene/scene.jsx'
+import { fetchData } from '../../utils/request.js'
 
 class Main extends React.Component {
     constructor(props) {
@@ -25,20 +26,10 @@ class Main extends React.Component {
         this.onClickSearch = this.onClickSearch.bind(this)
     }
 
-
-    componentDidMount() {
-
-        console.log(window.localStorage.getItem('user_id'))
-
-    }
-
-
-
   showDrawer = () => {
     this.setState({
       visible: !this.state.visible,
     });
-    console.log(this.state.placement)
   };
 
   onClose = () => {
@@ -46,7 +37,7 @@ class Main extends React.Component {
       visible: !this.state.visible,
     });
   };
-
+ 
 
     changeRoot(isScene, sceneID) {
         if (isScene) {
@@ -147,7 +138,7 @@ class Main extends React.Component {
                                 visible={this.state.visible}
                                 getContainer={false}
                             >
-                                <Person />
+                            <Person/> 
                             </Drawer>
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
