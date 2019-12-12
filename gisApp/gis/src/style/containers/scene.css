@@ -9,7 +9,7 @@
     z-index: 100000;
     height: 54px;
     width: 54px;
-    background-color: rgba(250,250,250,0.8);
+    background-color: rgba(250,250,250,0.9);
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -35,4 +35,15 @@
     margin-top: 2%;
     overflow-y: auto;
     max-height: 95%;
+}
+.top{
+    font-size: 30px;
+    font-weight: 700;
+    background-color: #efefef;
+    padding-left: 2%;
+}
+.otherbox{
+    width: 90%;
+    margin-left: 10%;    
+
 }

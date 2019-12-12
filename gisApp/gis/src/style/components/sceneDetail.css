@@ -1,7 +1,7 @@
 #SceneDetail {
     background-color: rgba(213,213,213,0.05);
     position: absolute;
-    width: 26%;
+    width: 24%;
     float: left;
     z-index: 1;
     border-radius: 8px;
@@ -33,14 +33,7 @@
     animation-fill-mode: forwards;
     animation-timing-function:ease;
 }
-.phone{
-    font-size: 15px;
-    position: relative;
-    animation:mymove 2s;
-    -webkit-animation:mymove 2s; /*Safari and Chrome*/
-    animation-fill-mode: forwards;
-    animation-timing-function:ease;
-}
+
 span {
     padding-left: 5px;
 }
@@ -58,7 +51,7 @@ span {
 }
 
 .main div {
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .addfavbtn {

@@ -1,5 +1,19 @@
 #SceneTough {
     display: flex;
-    width: 100%;
+    background-color: rgba(213,213,213,0.4);
+    padding-bottom: 2%;
     /* flex-direction: column-reverse; */
+}
+.toughhead{
+    font-size: 20px;
+    height: 40px;
+    font-weight: 550;
+    line-height: 40px;
+    opacity: 1;
+    color: #3A3E41;
+    margin-bottom: 1%;
+    display: inline-block;
+}
+.main div{
+    padding-top: 0;
 }
