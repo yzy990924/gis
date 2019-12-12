@@ -28,8 +28,12 @@
 }
 
 #scenemorebx{
-    height: 100%;
     position: absolute;
     right: 0;
     overflow: hidden;
+    min-height: 700px;
+    min-height: 90%;
+    margin-top: 2%;
+    overflow-y: auto;
+    max-height: 95%;
 }

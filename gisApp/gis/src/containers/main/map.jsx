@@ -232,15 +232,15 @@ class Map extends Component {
                     type: 'bar3D',
                     coordinateSystem: 'geo3D',
                     data: convertData([
-                        { name: "方特", value: 50, loca: "hhh" },
-                        { name: "北辰郊野公园", value: 30, loca: "hhh" },
-                        { name: "五大道", value: 55, loca: "hhh" },
-                        { name: "人民公园", value: 35, loca: "hhh" },
-                        { name: "津门故里", value: 39, loca: "hhh" },
-                        { name: "天津义和团纪念馆", value: 45, loca: "hhh" },
-                        { name: "梁启超纪念馆", value: 53, loca: "hhh" },
-                        { name: "东丽湖", value: 29, loca: "hhh" },
-                        { name: "张学良故居博物馆(少帅府)", value: 48, loca: "hhh" }
+                        { name: "方特", value: 50 },
+                        { name: "北辰郊野公园", value: 30},
+                        { name: "五大道", value: 55},
+                        { name: "人民公园", value: 35},
+                        { name: "津门故里", value: 39},
+                        { name: "天津义和团纪念馆", value: 45},
+                        { name: "梁启超纪念馆", value: 53},
+                        { name: "东丽湖", value: 29},
+                        { name: "张学良故居博物馆(少帅府)", value: 48 }
 
                     ]),
                     barSize: 1, //柱子粗细
