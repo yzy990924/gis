@@ -67,7 +67,8 @@ class sceneDetail extends React.Component {
             <div id='SceneDetail'>
                 <div className='sceneBox'>
                     <div className='head'>
-                        {datarray.datarray.scene_name}
+                        <div className = 'name'>{datarray.datarray.scene_name}</div>
+                        <div className = 'line'></div>
                     </div>
                     <div className='main'>
                         <div className='type_score'>
