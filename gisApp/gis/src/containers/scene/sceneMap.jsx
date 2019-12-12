@@ -25,8 +25,6 @@ class SceneMap extends Component {
             test: '',
             regions: '',
         }
-        console.log(props)
-        console.log(props.sceneID)
         this.a()
     }
     a() {
@@ -5327,7 +5325,7 @@ class SceneMap extends Component {
             min: 0,
             max: 10,
             inRange: {
-                color: ['#AEAEAE', '#d0d6f6', '#c8e3e2', '#9be3b3', '#feecd4', '#88b9f4', '#fed6d3', '#c7625d', '#e5cb81', '#d73027', '#a50026']
+                color: ['#fafafa', '#313695', '#4575b4', '#ffc0ff', '#abd9e9', '#74add1', '#fd5f00', '#f46d43', '#4575b4', '#0f4c80', '#3e93ef']
             }
         },
         tooltip: {

@@ -1,7 +1,9 @@
 import React from 'react';
+import { Icon } from 'antd';
 import { Modal, Button, message } from 'antd';
 import { fetchData } from '../utils/request'
 import "../style/components/sceneDetail.css"
+
 let id
 const { confirm } = Modal;
 let sceneID = ''
@@ -69,16 +71,20 @@ class sceneDetail extends React.Component {
                     </div>
                     <div className='main'>
                         <div className='type_score'>
-                            <div className='type'>{datarray.datarray.scene_type}</div>
-                            <div className='score'>{datarray.datarray.scene_score}</div>
+                            <div className='type'><Icon type="tag" style={{ color: '#1890ff'}}/><span></span>{datarray.datarray.scene_type}</div>
+                            <div className='score'><Icon type="star" theme="filled" style={{ color: '#ffff00'}}/><Icon type="star" theme="filled" style={{ color: '#ffff00'}}/><Icon type="star" theme="filled" style={{ color: '#ffff00'}}/><Icon type="star" theme="filled" style={{ color: '#ffff00'}}/><Icon type="star" theme="filled" style={{ color: '#ffff00'}}/>
+                            <span></span>
+                            {datarray.datarray.scene_score}</div>
                         </div>
-                        <div className='location'>{datarray.datarray.scene_location}</div>
-                        <div className='time'>{datarray.datarray.scene_time}</div>
+                        <div className='location'><Icon type="environment" style={{ color: '#1890ff'}} /><span></span>{datarray.datarray.scene_location}</div>
+                        <div className='time'><Icon type="clock-circle" style={{ color: '#1890ff'}} /><span></span>{datarray.datarray.scene_time}</div>
+                        <div className='phone'><Icon type="phone" style={{ color: '#1890ff'}} /><span></span>
+                            {datarray.datarray.scene_telephone}</div>
                     </div>
-                    <div className='phone'>{datarray.datarray.scene_telephone}</div>
+                    
                 </div>
-                <div onClick={this.handlecollection}>
-                    <Button onClick={this.showConfirm} >点击收藏</Button>
+                <div className="addfavbtn" onClick={this.handlecollection}>
+                    <Button  onClick={this.showConfirm} ><Icon type="heart" theme="twoTone" twoToneColor="#eb2f96"></Icon>点击收藏</Button>
                 </div>
             </div>
         )

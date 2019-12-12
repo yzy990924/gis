@@ -4,12 +4,13 @@ import SceneTough from '../../components/sceneTough'
 import { Button, Input } from 'antd'
 import '../../style/containers/person.css'
 import { fetchData } from '../../utils/request.js'
-
+let myscene = []
 class Person extends React.Component {
     constructor() {
         super();
         this.state = {
-            display: ['block', 'none', 'none']
+            display: ['block', 'none', 'none'],
+            ismy:false
         }
         this.onchangeBoxA = this.onchangeBoxA.bind(this)
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
@@ -51,7 +52,26 @@ class Person extends React.Component {
 
         fetchData('getScene', request)
             .then(data => {
-                console.log(data)
+                Object.keys(data).map((key, item) => {
+                    request = {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            scene_id: data[key].id
+                        }),
+                        headers: {
+                            contentType: 'application/json'
+                        }
+                    }
+                    fetchData('hover', request)
+                        .then(otherdata => {
+                            myscene = otherdata
+                            this.setState({
+                                ismy:true
+                            })
+                        })
+                        .catch(e => {
+                        })
+                })
             })
             .catch(e => {
             })
@@ -88,6 +108,7 @@ class Person extends React.Component {
                     </div>
 
                     <div className='collection' style={this.getStylesA()}>
+                        {this.state.ismy?<SceneTough result = {myscene} type={"myscene"} />:null}
                     </div>
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxA}>
 

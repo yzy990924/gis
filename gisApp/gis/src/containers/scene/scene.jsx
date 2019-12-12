@@ -4,6 +4,7 @@ import SceneDetail from '../../components/sceneDetail'
 import { fetchData } from '../../utils/request'
 import SceneTough from '../../components/sceneTough'
 import "../../style/containers/scene.css"
+import { Icon } from 'antd';
 
 let datarray = []
 let sceneID
@@ -25,7 +26,7 @@ class Scene extends React.Component {
         fetchData('sceneDetail', request)
             .then(data => {
                 datarray = data
-                console.log(datarray)
+                console.log(data)
                 this.setState({ detail: true })
 
             })
@@ -93,7 +94,7 @@ class Scene extends React.Component {
         return (
             <div id='scene'>
                 <div className='back' onClick={this.handleBack}>
-                    <img src = "../../assets/back.png"/>
+                    <Icon type="left" />返回
                 </div>
                 {this.state.detail ? <div className = "SceneDetail">  <SceneDetail datarray={datarray}/></div> : null}
                 <SceneMap sceneID={sceneID} />
