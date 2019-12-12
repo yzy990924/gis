@@ -3,3 +3,12 @@
     width: 100%;
     /* flex-direction: column-reverse; */
 }
+
+#SceneTough {
+    background-color: rgba(213,213,213,0.3);
+    border-radius: 3%;
+    color: black;
+}
+#SceneTough .head {
+    border-radius: 3%;
+}
