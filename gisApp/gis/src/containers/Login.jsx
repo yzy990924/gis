@@ -22,15 +22,12 @@ class Login extends React.Component {
             isLogin: false,
             login:false
         }
-        localStorage.clear();
         this.handleClickButton = this.handleClickButton.bind(this)
         this.handleWillRegister = this.handleWillRegister.bind(this)
         this.handleClickRegister = this.handleClickRegister.bind(this)
     }
 
-    componentWillMount() {
-        window.localStorage.setItem('isLogin', false);
-    };
+   
 
     componentDidUpdate(nextProps) {
 
@@ -40,7 +37,7 @@ class Login extends React.Component {
 
             console.log(isLogin)
             if (isLogin)
-            { console.log('h');
+            { 
              history.push('./main');}
         }
     }
@@ -78,11 +75,7 @@ class Login extends React.Component {
         window.localStorage.setItem('isLogin', true);
         fetchData('login', request)
             .then(data => {
-                console.log(data.user_id)
                 window.localStorage.setItem('user_id',data.user_id)
-                const id = window.localStorage.getItem('user_id')
-                window.localStorage.setItem('user_id',data.user_id)
-                console.log(id)
                 if (data.code === 1) {
                     this.setData({
                         isLogin: true

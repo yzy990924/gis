@@ -12,10 +12,14 @@ class App extends Component {
 
 
     componentWillMount() {
+ 
         const { history } = this.props
         const isLoginSave = window.localStorage.getItem('isLogin')
         if (!isLoginSave)
             history.push('./login');
+        else{
+            history.push('./main');
+        }
         console.log(this.props)
     }
 

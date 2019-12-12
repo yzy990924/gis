@@ -16,7 +16,7 @@ class SceneTough extends React.Component {
         })
         
         datarray = props.result
-        console.log(props.type)
+        console.log(props)
     }
 
     render() {

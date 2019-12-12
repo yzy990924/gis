@@ -17,6 +17,49 @@ class Person extends React.Component {
         this.onchangeBoxC = this.onchangeBoxC.bind(this)
     }
 
+   componentWillMount(){
+       console.log(window.localStorage.getItem('user_id'))
+       this.fetch()
+   }
+
+    fetch(){
+        console.log(window.localStorage.getItem('user_id'))
+        let request = {
+            method: 'POST',
+            body: JSON.stringify({
+                user_id:window.localStorage.getItem('user_id')
+            }),
+            headers: {
+                contentType: 'application/json'
+            }
+        }
+
+        fetchData('getScene', request)
+            .then(data => {
+                Object.keys(data).map((key, item) => {
+                    request = {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            scene_id: data[key]
+                        }),
+                        headers: {
+                            contentType: 'application/json'
+                        }
+                    }
+                    fetchData('hover', request)
+                        .then(otherdata => {
+                            myscene = otherdata
+                            this.setState({
+                                ismy:true
+                            })
+                        })
+                        .catch(e => {
+                        })
+                })
+            })
+            .catch(e => {
+            })
+    }
     getStylesA() {
         let styleObj;
         styleObj = { display:this.state.display[0] };
@@ -38,45 +81,7 @@ class Person extends React.Component {
     onchangeBoxA() {
         this.setState({
             display: ['block', 'none', 'none']
-        })
-
-        let request = {
-            method: 'POST',
-            body: JSON.stringify({
-                user_id:window.localStorage.getItem('user_id')
-            }),
-            headers: {
-                contentType: 'application/json'
-            }
-        }
-
-        fetchData('getScene', request)
-            .then(data => {
-                Object.keys(data).map((key, item) => {
-                    request = {
-                        method: 'POST',
-                        body: JSON.stringify({
-                            scene_id: data[key].id
-                        }),
-                        headers: {
-                            contentType: 'application/json'
-                        }
-                    }
-                    fetchData('hover', request)
-                        .then(otherdata => {
-                            myscene = otherdata
-                            this.setState({
-                                ismy:true
-                            })
-                        })
-                        .catch(e => {
-                        })
-                })
-            })
-            .catch(e => {
-            })
-        
-        
+        }) 
 
     }
     onchangeBoxB() {

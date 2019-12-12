@@ -26,9 +26,9 @@ class Main extends React.Component {
     }
 
 
-    componentWillMount() {
+    componentDidMount() {
 
-        console.log(this.props)
+        console.log(window.localStorage.getItem('user_id'))
 
     }
 
