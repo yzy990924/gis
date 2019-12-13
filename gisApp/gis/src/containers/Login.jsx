@@ -37,7 +37,9 @@ class Login extends React.Component {
             console.log(isLogin)
             if (isLogin)
             { 
-             history.push('./main');}
+                window.localStorage.setItem('user_id',9)
+                history.push('./main')
+             }
         }
     }
 
@@ -75,6 +77,7 @@ class Login extends React.Component {
         fetchData('login', request)
             .then(data => {
                 window.localStorage.setItem('user_id',data.user_id)
+                console.log(window.localStorage.getItem('user_id'))
                 if (data.code === 1) {
                     this.setData({
                         isLogin: true

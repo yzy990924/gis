@@ -131,7 +131,7 @@ class Main extends React.Component {
                     null :
                     <div>
                          <Drawer
-                                title="个人中心"
+                                title="个人收藏"
                                 placement={this.state.placement}
                                 closable={false}
                                 onClose={this.onClose}
@@ -147,7 +147,7 @@ class Main extends React.Component {
                                     </div> 
             
                                 <div className='inputSearch'>
-                                    <Input className='inputField' onInput={this.handleSearch} style = {{height:'40px'}} />
+                                    <Input className='inputField' onInput={this.handleSearch} style = {{height:'45px'}} />
                                     <div className = 'searchicon'>
                                     <Icon type="search" className=' search icon' style={{ color: '#ffffff', fontSize: "40px" }} onClick={this.onClickSearch} />
                                     </div>
