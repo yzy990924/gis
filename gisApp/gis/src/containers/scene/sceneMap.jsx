@@ -5327,7 +5327,7 @@ class SceneMap extends Component {
             min: 0,
             max: 10,
             inRange: {
-                color: ['#fafafa', '#313695', '#4575b4', '#ffc0ff', '#abd9e9', '#74add1', '#fd5f00', '#f46d43', '#4575b4', '#0f4c80', '#3e93ef']
+                color: [' #7E8BA5', '#313695', '#4575b4', '#ffc0ff', '#abd9e9', '#74add1', '#fd5f00', '#f46d43', '#4575b4', '#0f4c80', '#3e93ef']
             }
         },
         tooltip: {

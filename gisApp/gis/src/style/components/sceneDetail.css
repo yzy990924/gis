@@ -1,7 +1,7 @@
 #SceneDetail {
-    background-color: rgba(213,213,213,0.2);
+    background-color: rgba(213,213,213,0.05);
     position: absolute;
-    width: 26%;
+    width: 24%;
     float: left;
     z-index: 1;
     border-radius: 8px;
@@ -12,34 +12,28 @@
 .main {
     padding-right: 28px;
 }
+.sceneBox{
+    margin-left: 4%;
+}
 .head {
-    font-size: 20px;
+    font-size: 35px;
     height: 40px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 40px;
-    text-align: center;
-    background-color: #eeeeee;
-    /* background-color: white; */
-    opacity:0.7;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    opacity: 1;
+    color: #3A3E41;
+    margin-bottom: 1%;
+    display: inline-block;
 }
 
 .main {
     font-size: 15px;
-    position: relative;
     animation:mymove 2s;
     -webkit-animation:mymove 2s; /*Safari and Chrome*/
     animation-fill-mode: forwards;
     animation-timing-function:ease;
 }
-.phone{
-    font-size: 15px;
-    position: relative;
-    animation:mymove 2s;
-    -webkit-animation:mymove 2s; /*Safari and Chrome*/
-    animation-fill-mode: forwards;
-    animation-timing-function:ease;
-}
+
 span {
     padding-left: 5px;
 }
@@ -57,10 +51,19 @@ span {
 }
 
 .main div {
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .addfavbtn {
     padding-top: 8px;
     padding-left: 20px;
+}
+.line{
+    background-color: #3A3E41;
+    height: 5px;
+    margin-top: 1.7%;
+}
+.name{
+    width: auto;
+    display: inline-block;
 }

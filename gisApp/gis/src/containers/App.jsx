@@ -13,11 +13,11 @@ class App extends Component {
 
     componentWillMount() {
         const { history } = this.props
-        const isLoginSave = window.localStorage.getItem('isLogin')
-        console.log(isLoginSave)
-        if (!isLoginSave)
+        let  isLoginSave = window.localStorage.getItem('user_id')
+        console.log(isLoginSave==='')
+        if (isLoginSave==='')
            { history.push('./login');
-            history.push('./main');}
+        }
         else{
             history.push('./main');
         }

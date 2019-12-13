@@ -1,6 +1,10 @@
 #Search{
     background-color: #fff;
     position: absolute;
-    right: 7%;
-    width: 14.5%;
+    right: 0.5%;
+    width: 16.5%;
+    min-height: 90%;
+    /* margin-top: 2%; */
+    overflow-y: auto;
+    max-height: 95%;
 }

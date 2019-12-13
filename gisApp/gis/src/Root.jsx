@@ -10,7 +10,10 @@ import Contain from './containers/Contain'
 class Root extends Component {
 
     componentWillMount(){
+        window.localStorage.clear()
         window.localStorage.setItem('sid','');
+        window.localStorage.setItem('user_id','');
+
     }
 
     render() {

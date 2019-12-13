@@ -253,13 +253,13 @@ class Search extends React.Component {
             <div id='Search'>
                 <div className='personBox'>
                     <div className='personbutton'>
-                        <Button onClick={this.onchangeBoxA} >
+                        <Button onClick={this.onchangeBoxA} style= {{width:"33.3%"}} >
                             名称
                         </Button>
-                        <Button onClick={this.onchangeBoxB}>
+                        <Button onClick={this.onchangeBoxB} style= {{width:"33.3%"}} >
                             位置
                         </Button>
-                        <Button onClick={this.onchangeBoxC}>
+                        <Button onClick={this.onchangeBoxC} style= {{width:"33.3%"}} >
                             类别
                         </Button>
                     </div>
