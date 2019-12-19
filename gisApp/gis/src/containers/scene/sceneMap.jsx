@@ -5362,14 +5362,16 @@ class SceneMap extends Component {
                 minBeta: -360,
                 maxBeta: 360,
                 alpha: 50,
-                center: [50, 0, -10],
-                distance: 450,
-                minDistance: 5,
-
+                center: [50, 0, -20],
+                distance: 350,
+                minDistance: 10,
+                damping: 0,   
+                rotateSensitivity: [0.6, 0.7],
                 panMouseButton: 'left',
-                rotateMouseButton: 'middle',
-                zoomSensitivity: 0.5
+                rotateMouseButton: 'right',
+                zoomSensitivity: 1
             },
+
             label: {
                 show: true,
                 formatter: function (params) {
