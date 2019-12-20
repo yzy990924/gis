@@ -8,8 +8,8 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/visualMap';
 import 'echarts/lib/chart/map';
 import 'echarts/lib/chart/bar';
-import 'echarts/map/js/province/tianjin';
 
+import 'echarts/map/js/province/tianjin';
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/gauge';
 import 'echarts/lib/chart/pie';
@@ -86,7 +86,7 @@ class Map extends Component {
     getOption = () => {
         return {
             geo3D: {
-                map: '天津',
+                map: 'tianjin',
                 environment: '#ffffff',
                 shading: 'lambert',
                 layoutSize: '100%',
@@ -108,7 +108,7 @@ class Map extends Component {
                 },
                 viewControl: {
                     distance: 130,
-                    autoRotate: true,
+                    autoRotate: false,
                     autoRotateAfterStill: 1,
                     panMouseButton: 'right',
                     rotateMouseButton: 'left',
@@ -249,6 +249,7 @@ class Map extends Component {
                     },
                 ],
             },
+            
 
             series: [
                 {
@@ -291,69 +292,9 @@ class Map extends Component {
         }
 
     }
-    getOption2 = () => {
-        return {
-            geo3D: {
-                map: '陕西',
-                environment: '#ffffff',
-                shading: 'lambert',
-                layoutSize: '100%',
-                light: {
-                    main: {
-                        intensity: 1,
-                        shadow: true,
-                        shadowQuality: 'high',
-                        alpha: 30
-                    },
-                    ambient: {
-                        intensity: 0
-                    },
-                    ambientCubemap: {
 
-                        exposure: 1,
-                        diffuseIntensity: 0.5
-                    }
-                },
-                viewControl: {
-                    distance: 130,
-                    autoRotate: true,
-                    autoRotateAfterStill: 1,
-                    panMouseButton: 'right',
-                    rotateMouseButton: 'left',
-                    animation: 'true',
-                    damping: 0,
-                    minDistance: 10,
-                    maxDistance: 150,
-                    rotateSensitivity: [0.6, 0.7],
-                    zoomSensitivity: 1
-                    //beta:
-                },
-                postEffect: {
-                    enable: true,
-                    bloom: {
-                        enable: false
-                    },
-                    SSAO: {
-                        radius: 1,
-                        intensity: 1,
-                        enable: true
-                    },
-                    depthOfField: {
-                        enable: false,
-                        focalRange: 10,
-                        blurRadius: 10,
-                        fstop: 1
-                    }
-                },
-
-                itemStyle: {
-                    borderWidth: 0.5,
-                    borderColor: '#fff'
-                },
-
-            },
-        }
-    }
+    
+ 
     onChartClick(param) {
         this.setState({
             sceneId: param.value[2],
@@ -372,9 +313,12 @@ class Map extends Component {
         }
         return (
             <div style={{display:"flex"}} >
+
                 <ReactEcharts
                     option={this.getOption()} style={this.getStyles()} id='map'
                     className='react_for_echarts' onEvents={onEvents} />
+           
+               
               
             </div>
 
