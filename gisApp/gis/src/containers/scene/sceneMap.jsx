@@ -5238,7 +5238,7 @@ class SceneMap extends Component {
                 },
                 emphasis: {
                     show: true,
-                    textStyle: { color: "#f00" }
+                    textStyle: { colorkey: "value", "#f00" }
                 }
             },
             itemStyle: {
