@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import echarts from 'echarts';
+import { Icon } from 'antd';
 import 'echarts-gl';
 import PropTypes from 'prop-types';
 import ReactEcharts from 'echarts-for-react';
@@ -145,7 +146,7 @@ class Map extends Component {
                     maxDistance: 150,
                     rotateSensitivity: [0.6, 0.7],
                     zoomSensitivity: 1,
-                    center: [-20,0,0]
+                    center: [-30,-10,0]
                     //beta:
                 },
                 postEffect: {
@@ -333,8 +334,13 @@ class Map extends Component {
                     label: {
                         show: false,
                         fontWeight: 900,
-                        color: '#313695',
-                        fontSize: "100px",
+                        textStyle: {
+                            color: '#000000',
+                            fontSize: "18",
+                            fontWeight: 'bold',
+                            borderColor: '#767593',
+                            borderWidth: '5',
+                        },
                         formatter: function (params) {
                             var id = params.value[2]
                             console.log(id)
@@ -346,7 +352,7 @@ class Map extends Component {
                                         return tooltip[i].name
                                     }
                                     else{
-                                        return tooltip[i].name + "\n" + tooltip[i].score + "\t" + tooltip[i].type + "\n" + tooltip[i].loca + "\n" + tooltip[i].telephone
+                                        return tooltip[i].name + "\n\n" + "评分: " + tooltip[i].score +  "\n" + "地址: " + tooltip[i].loca + "\n" + "联系电话: " + tooltip[i].telephone
                                     }
 
                                 }

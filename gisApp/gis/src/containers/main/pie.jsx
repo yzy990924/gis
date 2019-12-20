@@ -24,7 +24,7 @@ class Pie extends Component {
         return {
             title : {
                 text: '热门景点概览',
-                x:'center'
+                x:'center',
             },
             tooltip : {
                 trigger: 'item',
@@ -32,8 +32,8 @@ class Pie extends Component {
             },
             legend: {
                 /*x : 'center',
-                y : 'bottom',*/
-                /*orient: 'vertical',
+                y : 'bottom',
+*/                /*orient: 'vertical',
                 x: 'left',*/
                 orient: 'vertical',
                 left: 10,
@@ -72,6 +72,14 @@ class Pie extends Component {
                     radius : [30, 110],
                     center : ['68%', '50%'],
                     roseType : 'area',
+                    label: {
+                        normal: {
+                        textStyle : {
+                            fontWeight : 'normal',
+                            fontSize : '15',
+                            }
+                        }
+                    },
                     data:[
                         {value:10, name:'梁启超纪念馆'},
                         {value:5, name:'人民公园'},
