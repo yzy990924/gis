@@ -64,7 +64,7 @@ body{
 }
 .pie{
     position: absolute;
-    left: 100px;
-    top: 100px;
+    left: 20px;
+    top: 70px;
     z-index: 100000;
 }

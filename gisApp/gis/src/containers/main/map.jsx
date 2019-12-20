@@ -113,6 +113,7 @@ class Map extends Component {
         return {
             geo3D: {
                 map: '天津',
+                layoutCenter: ['80%', '80%'], 
                 environment: '#ffffff',
                 shading: 'lambert',
                 layoutSize: '100%',
@@ -143,7 +144,8 @@ class Map extends Component {
                     minDistance: 10,
                     maxDistance: 150,
                     rotateSensitivity: [0.6, 0.7],
-                    zoomSensitivity: 1
+                    zoomSensitivity: 1,
+                    center: [-20,0,0]
                     //beta:
                 },
                 postEffect: {

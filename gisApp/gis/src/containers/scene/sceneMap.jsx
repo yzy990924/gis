@@ -5214,8 +5214,8 @@ class SceneMap extends Component {
                 maxBeta: 360,
                 alpha: 50,
                 center: [50, 0, -20],
-                distance: 350,
-                minDistance: 10,
+                distance: 1550,
+                minDistance: 50,
                 damping: 0,   
                 rotateSensitivity: [0.6, 0.7],
                 panMouseButton: 'left',
@@ -5233,7 +5233,7 @@ class SceneMap extends Component {
                 textStyle: {
                     color: '#EECBAD',
                     fontWeight: 'normal',
-                    fontSize: 20,
+                    fontSize: 17,
                     backgroundColor: 'rgba(0,23,11,0)'
                 },
                 emphasis: {

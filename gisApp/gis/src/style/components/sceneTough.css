@@ -9,10 +9,10 @@
     padding-bottom: 2%;
 }
 .toughhead{
-    font-size: 20px;
+    font-size: 22px;
     height: 40px;
     font-weight: 550;
-    line-height: 40px;
+    line-height: 50px;
     opacity: 1;
     color: #3A3E41;
     margin-bottom: 1%;
@@ -20,4 +20,6 @@
 }
 .main div{
     padding-top: 0;
+    font-size: 18px;
+    /*padding-bottom: 10;*/
 }

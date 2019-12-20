@@ -32,18 +32,20 @@
     right: 0;
     overflow: hidden;
     min-height: 90%;
-    margin-top: 2%;
+    margin-top: 1%;
     overflow-y: auto;
     max-height: 95%;
+    width: 20%;
+    box-shadow: 0 0 4px 1px black;
 }
 .topic{
     font-size: 30px;
     font-weight: 700;
-    background-color: #efefef;
+    background-color: #f2f2f2;
     padding-left: 2%;
 }
 .otherbox{
     width: 90%;
-    margin-left: 10%;    
+    margin-left: 3%;    
 
 }

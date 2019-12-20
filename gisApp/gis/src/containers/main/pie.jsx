@@ -17,106 +17,73 @@ import 'echarts/lib/chart/pie';
 class Pie extends Component {
     getStyles() {
         let styleObj;
-        styleObj = { height: '250px', width: '250px' };
+        styleObj = { height: '400px', width: '600px' };
         return styleObj;
     }
     getOption = () => {
         return {
-            tooltip: {
+            title : {
+                text: '景点热度图',
+            x:'center'
+            },
+            tooltip : {
                 trigger: 'item',
-                formatter: "{a} <br/>{b}: {c} ({d}%)"
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
             legend: {
+                /*x : 'center',
+                y : 'bottom',*/
+                /*orient: 'vertical',
+                x: 'left',*/
                 orient: 'vertical',
-                x: 'left',
-                data:['直达','营销广告','搜索引擎','邮件营销','联盟广告','视频广告','百度','谷歌','必应','其他']
+                left: 10,
+                top: 80,
+                bottom: 20,
+
+                data:['津门故里','五大道风情旅游区','方特欢乐世界','北辰郊野公园','东丽湖','人民公园','梁启超纪念馆','张学良故居']
             },
-            series: [
+
+            toolbox: {
+                show : true,
+                feature : {
+                    mark : {show: true},
+                    //dataView : {show: true, readOnly: false},
+                    magicType : {
+                        show: true,
+                        type: ['pie', 'funnel']
+                    },
+                    //restore : {show: true},
+                    //saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+           /* visualMap: {
+                show: false,
+                min: 0,
+                max: 8,
+                inRange: {
+                    color: ['#8378EA','#E7BCF3','#FB7293','#FF9F7F','#FFDB5C','#9FE6B8','#32C5E9','#37A2DA']
+                }
+            },*/
+            series : [
                 {
-                    name:'访问来源',
+                    name:'景点热度',
                     type:'pie',
-                    selectedMode: 'single',
-                    radius: [0, '30%'],
-        
-                    label: {
-                        normal: {
-                            position: 'inner'
-                        }
-                    },
-                    labelLine: {
-                        normal: {
-                            show: false
-                        }
-                    },
+                    radius : [30, 110],
+                    center : ['70%', '50%'],
+                    roseType : 'area',
                     data:[
-                        {value:335, name:'直达', selected:true},
-                        {value:679, name:'营销广告'},
-                        {value:1548, name:'搜索引擎'}
-                    ]
-                },
-                {
-                    name:'访问来源',
-                    type:'pie',
-                    radius: ['40%', '55%'],
-                    label: {
-                        normal: {
-                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                            backgroundColor: '#eee',
-                            borderColor: '#aaa',
-                            borderWidth: 1,
-                            borderRadius: 4,
-                            // shadowBlur:3,
-                            // shadowOffsetX: 2,
-                            // shadowOffsetY: 2,
-                            // shadowColor: '#999',
-                            // padding: [0, 7],
-                            rich: {
-                                a: {
-                                    color: '#999',
-                                    lineHeight: 22,
-                                    align: 'center'
-                                },
-                                // abg: {
-                                //     backgroundColor: '#333',
-                                //     width: '100%',
-                                //     align: 'right',
-                                //     height: 22,
-                                //     borderRadius: [4, 4, 0, 0]
-                                // },
-                                hr: {
-                                    borderColor: '#aaa',
-                                    width: '100%',
-                                    borderWidth: 0.5,
-                                    height: 0
-                                },
-                                b: {
-                                    fontSize: 16,
-                                    lineHeight: 33
-                                },
-                                per: {
-                                    color: '#eee',
-                                    backgroundColor: '#334455',
-                                    padding: [2, 4],
-                                    borderRadius: 2
-                                }
-                            }
-                        }
-                    },
-                    data:[
-                        {value:335, name:'直达'},
-                        {value:310, name:'邮件营销'},
-                        {value:234, name:'联盟广告'},
-                        {value:135, name:'视频广告'},
-                        {value:1048, name:'百度'},
-                        {value:251, name:'谷歌'},
-                        {value:147, name:'必应'},
-                        {value:102, name:'其他'}
+                        {value:10, name:'梁启超纪念馆'},
+                        {value:5, name:'人民公园'},
+                        {value:15, name:'东丽湖'},
+                        {value:25, name:'北辰郊野公园'},
+                        {value:20, name:'张学良故居'},
+                        {value:35, name:'五大道风情旅游区'},
+                        {value:30, name:'津门故里'},
+                        {value:40, name:'方特欢乐世界'}
                     ]
                 }
             ]
-        
-            
-
         }
 
     }
