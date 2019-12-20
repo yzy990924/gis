@@ -1,9 +1,12 @@
 body{
-    background-image: url('../../assets/loginbg.png');
+    /*background-image: url('../../assets/loginbg.png');*/
+    background-image: url('../../assets/10.jpg');
     background-repeat:no-repeat;
     background-origin:content-box;
+    background-size: contain;
     background-position:center;
 }
+
 #main{
     display: flex;
     flex-direction: column;
@@ -17,17 +20,17 @@ body{
     flex: 1;
     margin-left: 10%;
 }
-.side{
+/* .side{
     flex: 0 0 12em;
 }
-
+ */
 .top{
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5%;
+
+    /* margin-bottom: 0.5%;
     padding-bottom: 0.5%;
-    padding-top: 0.5%;
+    padding-top: 0.5%; */
 
 }
 .inputSearch{
@@ -48,6 +51,7 @@ body{
     background-color: #1890ff;
     margin-right: 117px;
 }
+
 .usericon{
     background-color: #1890ff;
     height: 42px;

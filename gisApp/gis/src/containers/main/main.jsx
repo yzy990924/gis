@@ -7,6 +7,7 @@ import "../../style/containers/main.css"
 import { Icon, Input, Drawer } from 'antd';
 import Scene from '../scene/scene.jsx'
 import { fetchData } from '../../utils/request.js'
+import Pie from './pie'
 
 class Main extends React.Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class Main extends React.Component {
             visible: false,
             placement: 'left',
             value: '',
+            isbing:false,
         }
         this.changeRoot = this.changeRoot.bind(this)
         this.onClickPerson = this.onClickPerson.bind(this)
@@ -32,56 +34,62 @@ class Main extends React.Component {
     });
   };
 
+  showDrawerbing = () => {
+    this.setState({
+      isbing: !this.state.isbing
+    });
+  };
+
   onClose = () => {
     this.setState({
       visible: !this.state.visible,
+    });
+  };
+  onClosebing = () => {
+    this.setState({
+      isbing: !this.state.isbing,
     });
   };
  
 
     changeRoot(isScene, sceneID) {
         if (isScene) {
-
-            if (sceneID === 50) {
+            if (sceneID === 42) {
                 this.setState({
                     sceneID: 3
                 })
-            } else if (sceneID === 30) {
+            } else if (sceneID === 41) {
                 this.setState({
                     sceneID: 4
                 })
             }
-            else if (sceneID === 55) {
+            else if (sceneID === 40) {
                 this.setState({
                     sceneID: 2
                 })
             }
-            else if (sceneID === 35) {
+            else if (sceneID === 39) {
                 this.setState({
                     sceneID: 6
                 })
             }
-            else if (sceneID === 39) {
+            else if (sceneID === 38) {
                 this.setState({
                     sceneID: 1
                 })
             }
-            else if (sceneID === 45) {
+            else if (sceneID === 37) {
                 this.setState({
                     sceneID: 8
                 })
             }
-            else if (sceneID === 53) {
+            else if (sceneID === 36) {
                 this.setState({
                     sceneID: 7
                 })
             }
-            else if (sceneID === 29) {
-                this.setState({
-                    sceneID: 5
-                })
-            }
-            else if (sceneID === 48) {
+         
+            else if (sceneID === 34) {
                 this.setState({
                     sceneID: 9
                 })
@@ -140,12 +148,23 @@ class Main extends React.Component {
                             >
                             <Person/> 
                             </Drawer>
+                            <Drawer
+                                title="bing图"
+                                placement={'top'}
+                                closable={false}
+                                onClose={this.onClosebing}
+                                visible={this.state.isbing}
+                                getContainer={false}
+                                
+                            >
+                            <Pie/>
+                            </Drawer>
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
                                 <div className = 'usericon' onClick={this.showDrawer}>
                                 <Icon type="user" className='user icon' style={{ color: '#ffffff', fontSize: "40px" }}  onClick={this.showDrawer}/>
                                     </div> 
-            
+                                    <div className='bing'><Icon type="pie-chart"onClick={this.showDrawerbing} style={{ color: '#ffffff', fontSize: "40px" }}  /></div>
                                 <div className='inputSearch'>
                                     <Input className='inputField' onInput={this.handleSearch} style = {{height:'45px'}} />
                                     <div className = 'searchicon'>
