@@ -5368,7 +5368,7 @@ class SceneMap extends Component {
                 damping: 0,   
                 rotateSensitivity: [0.6, 0.7],
                 panMouseButton: 'left',
-                rotateMouseButton: 'right',
+                rotateMouseButton: 'middle',
                 zoomSensitivity: 1
             },
 
