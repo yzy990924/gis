@@ -39,7 +39,5 @@ export function fetchData(apiPath, request = {}) {
             return res.json()
         })
 
-
-
     );
 };

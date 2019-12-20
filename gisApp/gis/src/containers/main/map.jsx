@@ -81,7 +81,6 @@ class Map extends Component {
     getStyles() {
         let styleObj;
         styleObj = { height: window.innerHeight * 0.9, width: window.innerWidth };
-
         return styleObj;
     }
     getOption = () => {
@@ -138,7 +137,6 @@ class Map extends Component {
                         fstop: 1
                     }
                 },
-
                 itemStyle: {
                     borderWidth: 0.5,
                     borderColor: '#fff'
@@ -251,6 +249,7 @@ class Map extends Component {
                     },
                 ],
             },
+
             series: [
                 {
                     type: 'bar3D',
@@ -273,47 +272,115 @@ class Map extends Component {
                     bevelSize: 0.3,
                     label: {
                         show: false,
-                        fontWeight:900,
-                        color:'#313695',
-                        fontSize:"100px",
+                        fontWeight: 900,
+                        color: '#313695',
+                        fontSize: "100px",
                         formatter: function (params) {
                             var id = params.value[2]
-                            for (let i = 0; i < 9; i++) 
+                            for (let i = 0; i < 9; i++)
                                 if (tooltip[i].id === id) {
                                     console.log(tooltip[i].name)
-                                    return tooltip[i].name+"\n"+tooltip[i].score+"\t"+tooltip[i].type+"\n"+tooltip[i].loca+"\n"+tooltip[i].telephone
+                                    return tooltip[i].name + "\n" + tooltip[i].score + "\t" + tooltip[i].type + "\n" + tooltip[i].loca + "\n" + tooltip[i].telephone
                                 }
-                            }
-                },
-                minHeight: 0.2,
+                        }
+                    },
+                    minHeight: 0.2,
                 }
             ],
 
-    }
+        }
 
-}
-onChartClick(param) {
-    this.setState({
-        sceneId: param.value[2],
-        isScene: true
-    })
-    const { changeRoot } = this.props;
-    changeRoot(this.state.isScene, this.state.sceneId)
-}
-onMouseMove(param){
-
-}
-render() {
-    let onEvents = {
-        'click': this.onChartClick.bind(this),
-        'mousemove': this.onMouseMove.bind(this)
     }
-    return (
-        <ReactEcharts
-            option={this.getOption()} style={this.getStyles()} id='map'
-            className='react_for_echarts' onEvents={onEvents} />
-    );
-}
+    getOption2 = () => {
+        return {
+            geo3D: {
+                map: '陕西',
+                environment: '#ffffff',
+                shading: 'lambert',
+                layoutSize: '100%',
+                light: {
+                    main: {
+                        intensity: 1,
+                        shadow: true,
+                        shadowQuality: 'high',
+                        alpha: 30
+                    },
+                    ambient: {
+                        intensity: 0
+                    },
+                    ambientCubemap: {
+
+                        exposure: 1,
+                        diffuseIntensity: 0.5
+                    }
+                },
+                viewControl: {
+                    distance: 130,
+                    autoRotate: true,
+                    autoRotateAfterStill: 1,
+                    panMouseButton: 'right',
+                    rotateMouseButton: 'left',
+                    animation: 'true',
+                    damping: 0,
+                    minDistance: 10,
+                    maxDistance: 150,
+                    rotateSensitivity: [0.6, 0.7],
+                    zoomSensitivity: 1
+                    //beta:
+                },
+                postEffect: {
+                    enable: true,
+                    bloom: {
+                        enable: false
+                    },
+                    SSAO: {
+                        radius: 1,
+                        intensity: 1,
+                        enable: true
+                    },
+                    depthOfField: {
+                        enable: false,
+                        focalRange: 10,
+                        blurRadius: 10,
+                        fstop: 1
+                    }
+                },
+
+                itemStyle: {
+                    borderWidth: 0.5,
+                    borderColor: '#fff'
+                },
+
+            },
+        }
+    }
+    onChartClick(param) {
+        this.setState({
+            sceneId: param.value[2],
+            isScene: true
+        })
+        const { changeRoot } = this.props;
+        changeRoot(this.state.isScene, this.state.sceneId)
+    }
+    onMouseMove(param) {
+
+    }
+    render() {
+        let onEvents = {
+            'click': this.onChartClick.bind(this),
+            'mousemove': this.onMouseMove.bind(this)
+        }
+        return (
+            <div style={{display:"flex"}} >
+                <ReactEcharts
+                    option={this.getOption()} style={this.getStyles()} id='map'
+                    className='react_for_echarts' onEvents={onEvents} />
+              
+            </div>
+
+
+        );
+    }
 };
 
 export default Map;
