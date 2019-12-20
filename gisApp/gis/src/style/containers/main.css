@@ -27,7 +27,7 @@ body{
 .top{
     margin: auto;
     display: flex;
-
+    justify-content: space-between;
     /* margin-bottom: 0.5%;
     padding-bottom: 0.5%;
     padding-top: 0.5%; */
@@ -61,4 +61,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.pie{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    z-index: 100000;
 }

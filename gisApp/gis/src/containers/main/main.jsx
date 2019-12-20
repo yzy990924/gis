@@ -34,22 +34,13 @@ class Main extends React.Component {
     });
   };
 
-  showDrawerbing = () => {
-    this.setState({
-      isbing: !this.state.isbing
-    });
-  };
 
   onClose = () => {
     this.setState({
       visible: !this.state.visible,
     });
   };
-  onClosebing = () => {
-    this.setState({
-      isbing: !this.state.isbing,
-    });
-  };
+
  
 
     changeRoot(isScene, sceneID) {
@@ -148,24 +139,12 @@ class Main extends React.Component {
                             >
                             <Person/> 
                             </Drawer>
-                            <Drawer
-                                title="bing图"
-                                placement={'top'}
-                                closable={false}
-                                onClose={this.onClosebing}
-                                visible={this.state.isbing}
-                                getContainer={false}
-                                
-                            >
-                            <Pie/>
-                            </Drawer>
+                           
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
-                                <div className = ''></div>
                                 <div className = 'usericon' onClick={this.showDrawer}>
                                 <Icon type="user" className='user icon' style={{ color: '#ffffff', fontSize: "40px" }}  onClick={this.showDrawer}/>
                                     </div> 
-                                    <div className='bing'><Icon type="pie-chart"onClick={this.showDrawerbing} style={{ color: '#ffffff', fontSize: "40px" }}  /></div>
                                 <div className='inputSearch'>
                                     <Input className='inputField' onInput={this.handleSearch} style = {{height:'45px'}} />
                                     <div className = 'searchicon'>
@@ -175,7 +154,7 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className='mainBox'>
-             
+                            <Pie className='pie'/>
                             <Map changeRoot={this.changeRoot} className='map' />
                             {this.state.isSearchList ? <Search searchlist={this.state.searchlist} isSearchList={this.state.isSearchList} /> : <div />}
                         </div>
