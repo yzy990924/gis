@@ -17,7 +17,7 @@ import 'echarts/lib/chart/pie';
 class Pie extends Component {
     getStyles() {
         let styleObj;
-        styleObj = { height: window.innerHeight * 0.9, width: window.innerWidth };
+        styleObj = { height: '100px', width: '100px' };
         return styleObj;
     }
     getOption = () => {
@@ -33,10 +33,10 @@ class Pie extends Component {
     render() {
 
         return (
-            <div style={{display:"flex"}} >
+            <div >
 
                 <ReactEcharts
-                    option={this.getOption()} style={this.getStyles()} id='map'
+                    option={this.getOption()} style={this.getStyles()} 
                     className='react_for_echarts' />
            
             </div>

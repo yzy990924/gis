@@ -161,6 +161,7 @@ class Main extends React.Component {
                             </Drawer>
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
+                                <div className = ''></div>
                                 <div className = 'usericon' onClick={this.showDrawer}>
                                 <Icon type="user" className='user icon' style={{ color: '#ffffff', fontSize: "40px" }}  onClick={this.showDrawer}/>
                                     </div> 
