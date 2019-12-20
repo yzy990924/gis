@@ -1,6 +1,6 @@
 #SceneTough {
     display: flex;
-    background-color: rgba(213,213,213,0.4);
+    background-color: rgba(213,213,213,1.4);
     padding-bottom: 2%;
     /* flex-direction: column-reverse; */
 }
@@ -9,7 +9,7 @@
     padding-bottom: 2%;
 }
 .toughhead{
-    font-size: 22px;
+    font-size: 21px;
     height: 40px;
     font-weight: 550;
     line-height: 50px;
@@ -20,6 +20,6 @@
 }
 .main div{
     padding-top: 0;
-    font-size: 18px;
+    font-size: 17.5px;
     /*padding-bottom: 10;*/
 }

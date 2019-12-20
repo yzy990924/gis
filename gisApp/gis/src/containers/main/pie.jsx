@@ -17,14 +17,14 @@ import 'echarts/lib/chart/pie';
 class Pie extends Component {
     getStyles() {
         let styleObj;
-        styleObj = { height: '400px', width: '600px' };
+        styleObj = { height: '400px', width: '600px'};
         return styleObj;
     }
     getOption = () => {
         return {
             title : {
-                text: '景点热度图',
-            x:'center'
+                text: '热门景点概览',
+                x:'center'
             },
             tooltip : {
                 trigger: 'item',
@@ -70,7 +70,7 @@ class Pie extends Component {
                     name:'景点热度',
                     type:'pie',
                     radius : [30, 110],
-                    center : ['70%', '50%'],
+                    center : ['68%', '50%'],
                     roseType : 'area',
                     data:[
                         {value:10, name:'梁启超纪念馆'},

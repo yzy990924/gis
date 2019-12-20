@@ -1,7 +1,7 @@
 #SceneDetail {
-    background-color: rgba(213,213,213,0.05);
+    background-color: rgba(213,213,213,0.6);
     position: absolute;
-    width: 24%;
+    width: 20%;
     float: left;
     z-index: 1;
     border-radius: 8px;
