@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'antd';
+import  Scene from '../containers/scene/scene'
 import "../style/components/sceneTough.css"
 
 
