@@ -249,6 +249,7 @@ class Search extends React.Component {
     }
 
     setScene = value => {
+        console.log('erzi')
         this.setState({
           sid:value
         })

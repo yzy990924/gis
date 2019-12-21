@@ -36,7 +36,8 @@
     overflow-y: auto;
     max-height: 95%;
     width: 20%;
-    box-shadow: 0 0 4px 1px black;
+    background: #fff;
+    background-color: rgba(213,213,213,0.6);;
 }
 .topic{
     font-size: 30px;

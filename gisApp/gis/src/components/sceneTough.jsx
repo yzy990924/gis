@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'antd';
 import "../style/components/sceneTough.css"
-import Scene from '../containers/scene/scene'
+
 
 let sid 
 class SceneTough extends React.Component {
@@ -17,8 +17,11 @@ class SceneTough extends React.Component {
     }
 
     onsceneMap() {
+        console.log('sunzi')
         const { setScene } = this.props;
-        setScene(sid);
+        const datarray = this.props.result
+        console.log(datarray)
+        setScene(datarray.scene_id);
     }
 
     render() {
@@ -37,17 +40,16 @@ class SceneTough extends React.Component {
                     <div className='main'>
                         <div className='type_score'>
                             <div className='type'>{datarray.type || datarray.res_type}</div>
+                            {!datarray.traffic_name ? <div className='score'>{datarray.score || datarray.hotel_score || datarray.res_score+'分'}</div> : null}
+                            {!datarray.traffic_name ? <div className='price'>人均： {datarray.hotel_price || datarray.res_price}</div> : null}
                             {issearch ? null :
                                 <div className='dis'>
                                     <Icon type="compass" style={{ color: '#1890ff' }} />
                                     <span></span>
-                                    {datarray.hotel_distance || datarray.traffic_distance || "距离景点" + (datarray.res_distance || datarray.traffic_distance) + "米"}
+                                    {datarray.hotel_distance || "距离景点" + (datarray.res_distance || datarray.traffic_distance) + "米"}
                                 </div>}
-
-                            {datarray.traffic_score ? <div className='score'>{datarray.score || datarray.hotel_score || datarray.res_score}</div> : null}
-                            {datarray.traffic_score ? <div className='price'>人均： {datarray.hotel_price || datarray.res_price}</div> : null}
                         </div>
-                        <div className='location'><Icon type="environment" style={{ color: '#1890ff' }} /><span></span>{datarray.location || datarray.hotel_location || datarray.res_location}</div>
+                        {!datarray.traffic_name ?<div className='location'><Icon type="environment" style={{ color: '#1890ff' }} /><span></span>{datarray.location || datarray.hotel_location || datarray.res_location}</div>:null}
                         <div className='time'>{datarray.time}</div>
 
                     </div>

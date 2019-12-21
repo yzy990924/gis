@@ -79,7 +79,7 @@ class Main extends React.Component {
                     sceneID: 7
                 })
             }
-         
+        
             else if (sceneID === 34) {
                 this.setState({
                     sceneID: 9
@@ -123,6 +123,8 @@ class Main extends React.Component {
       }
 
     isSearchScene = value=>{
+        console.log('yeye')
+        console.log(value)
         if(value){
             this.setState({
                 sceneID: value,
