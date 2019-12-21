@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SceneTough from '../../components/sceneTough'
-import { Button, Input } from 'antd'
+import { Button, Input,Skeleton } from 'antd'
 import '../../style/containers/person.css'
 import { fetchData } from '../../utils/request.js'
 import '../../style/containers/search.css'
@@ -59,7 +59,8 @@ class Search extends React.Component {
                                 .then(data => {
                                     namelist[key] = data
                                     this.setState({
-                                        isfetch:[true,false,false]
+                                        isfetch:[true,false,false],
+                                        isover:true
                                     })
                                 })
                                 .catch(e => {
@@ -98,7 +99,8 @@ class Search extends React.Component {
                             .then(data => {
                                 namelist[key] = data
                                 this.setState({
-                                    isfetch:[true,false,false]
+                                    isfetch:[true,false,false],
+                                    isover:true
                                 })
                             })
                             .catch(e => {
@@ -146,7 +148,8 @@ class Search extends React.Component {
                                 .then(data => {
                                     loclist[key] = data
                                     this.setState({
-                                        isfetch:[false,true,false]
+                                        isfetch:[false,true,false],
+                                        isover:true
                                     })
                                 })
                                 .catch(e => {
@@ -274,6 +277,7 @@ class Search extends React.Component {
                             类别
                         </Button>
                     </div>
+                    {!this.state.isover?<Skeleton active />:null}
                     {this.state.isfetch[0] ?
                         <div className='collection' onClick={this.onchangeBoxA}>
                             {

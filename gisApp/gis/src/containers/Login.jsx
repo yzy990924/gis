@@ -180,7 +180,7 @@ class Login extends React.Component {
                 {!this.state.willLogin ?
                     <div className='loginmain'>
                         <div className='background'></div>
-                        <div className='loginTable'>
+                        <div className='loginTable'> 
                             <div className='InputTable'>
                                 <div className='username'>
                                     <Input placeholder='用户名' onInput={this.handleInputUname} style={{ height: "50px", width: "400px", marginBottom: "8%" }} />
