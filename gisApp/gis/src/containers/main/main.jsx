@@ -139,7 +139,7 @@ class Main extends React.Component {
             <div id='main' style={this.getStyles()}>
                 {this.state.isScene ?
                     null :
-                    <div>
+                    <div style={{height:'100%'}}>
                          <Drawer
                                 title="个人收藏"
                                 placement={this.state.placement}

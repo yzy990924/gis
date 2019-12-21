@@ -37,13 +37,13 @@ class SceneTough extends React.Component {
                             <div >
                                 {datarray.name || datarray.hotel_name || datarray.res_name || datarray.traffic_name}
                             </div>
-                            {issearch ? <Icon type="star"  style={{fontSize:'40px',marginTop:'10%'}}/> : null}
+                            {issearch ? <Icon type="star"  style={{fontSize: '24px',marginTop: '7%'}}/> : null}
                         </div>
                         <div className='main'>
                             <div className='type_score'>
                                 <div className='type'>{datarray.type || datarray.res_type}</div>
                                 {!datarray.traffic_name ? <div className='score'>{datarray.score || datarray.hotel_score || datarray.res_score + '分'}</div> : null}
-                                {!datarray.traffic_name ? <div className='price'>人均： {datarray.hotel_price || datarray.res_price}</div> : null}
+                                {datarray.hotel_price||datarray.res_price  ? <div className='price'> {'人均：'+ datarray.hotel_price || datarray.res_price}</div> : null}
                                 {issearch ? null :
                                     <div className='dis'>
                                         <Icon type="compass" style={{ color: '#1890ff' }} />
