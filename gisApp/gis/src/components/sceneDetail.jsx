@@ -22,14 +22,13 @@ class sceneDetail extends React.Component {
 
     constructor(props) {
         super();
-        sceneID = props;
-        console.log(props)
+        sceneID = props.sceneID
+        console.log(props.sceneID)
         id = window.localStorage.getItem('user_id')
 
     }
 
     showConfirm() {
-
         confirm({
             title: '确定将其加入我的收藏中吗',
             content: 'When clicked the OK button, this dialog will be closed after 1 second',

@@ -96,7 +96,7 @@ class Scene extends React.Component {
                 <div className='back' onClick={this.handleBack}>
                     <Icon type="left" />返回
                 </div>
-                {this.state.detail ? <div className = "SceneDetail">  <SceneDetail datarray={datarray}/></div> : null}
+                {this.state.detail ? <div className = "SceneDetail">  <SceneDetail datarray={datarray} sceneID ={sceneID}/ ></div> : null}
                 <SceneMap sceneID={sceneID} />
                 <div id='scenemorebx'>
                     {this.state.ishotel ?
