@@ -21,6 +21,7 @@ class Person extends React.Component {
     UNSAFE_componentWillMount(){
         this.fetch()
     }
+
     fetch(){
         myscene = []
         let request = {
@@ -48,11 +49,28 @@ class Person extends React.Component {
                     }
                     fetchData('hover', request)
                         .then(otherdata => {
-                            myscene = otherdata
-                            this.setState({
-                                ismy:true
+                            Object.keys(data).map((key, item) => {
+                                console.log(data[key])
+                                request = {
+                                    method: 'POST',
+                                    body: JSON.stringify({
+                                        scene_id: data[key]
+                                    }),
+                                    headers: {
+                                        contentType: 'application/json'
+                                    }
+                                }
+                                fetchData('hover', request)
+                                    .then(otherdata => {
+                                        myscene[key] = otherdata
+                                        console.log(myscene[key])
+                                        this.setState({
+                                           ismy:true
+                                        })
+                                    })
+                                    .catch(e => {
+                                    })
                             })
-                            console.log('ji')
                         })
                         .catch(e => {
                         })
@@ -103,9 +121,12 @@ class Person extends React.Component {
         return (
             <div id='Person'>
                 <div className='personBox'>
-
                     <div className='collection' style={this.getStylesA()}>
-                     {this.state.ismy?<SceneTough result = {myscene} type={"myscene"} />:null}  
+                    {this.state.ismy?
+                                Object.keys(myscene).map((key, item) => 
+                                    <SceneTough key={item} result={myscene[key]} />
+                                ):null
+                            }
                     </div>
                 </div>
             </div>

@@ -15,9 +15,9 @@ class SceneTough extends React.Component {
             isScene: false,
             isover:false,
         })
+        console.log(props)
         this.onsceneMap = this.onsceneMap.bind(this)
     }
-
     onsceneMap() {
         console.log('sunzi')
         const { setScene } = this.props;
