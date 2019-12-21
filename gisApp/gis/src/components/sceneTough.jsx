@@ -13,7 +13,7 @@ class SceneTough extends React.Component {
             id: '',
             isfetch: false,
             isScene: false,
-            isover:false
+            isover:false,
         })
         this.onsceneMap = this.onsceneMap.bind(this)
     }
@@ -28,7 +28,8 @@ class SceneTough extends React.Component {
 
     render() {
         const datarray = this.props.result
-        const issearch = this.props.issearch
+        let issearch = false
+        issearch = this.props.issearch
         sid = datarray.id
         return (
             <div id={datarray.name ? 'Myscene' : 'SceneTough '}>
@@ -37,19 +38,19 @@ class SceneTough extends React.Component {
                             <div >
                                 {datarray.name || datarray.hotel_name || datarray.res_name || datarray.traffic_name}
                             </div>
-                            {issearch ? <Icon type="star"  style={{fontSize:'40px',marginTop:'10%'}}/> : null}
+                            {issearch ? <Icon type="star"  style={{fontSize: '24px',marginTop: '7%'}}/> : null}
                         </div>
                         <div className='main'>
                             <div className='type_score'>
                                 <div className='type'>{datarray.type || datarray.res_type}</div>
                                 {!datarray.traffic_name ? <div className='score'>{datarray.score || datarray.hotel_score || datarray.res_score + '分'}</div> : null}
-                                {!datarray.traffic_name ? <div className='price'>人均： {datarray.hotel_price || datarray.res_price}</div> : null}
-                                {issearch ? null :
-                                    <div className='dis'>
+                                {datarray.hotel_price||datarray.res_price  ? <div className='price'>人均：{datarray.hotel_price||datarray.res_price}</div> : null}
+                                {!issearch && (datarray.hotel_distance!=undefined||datarray.res_distance!=undefined || datarray.traffic_distance!=undefined)?                                     <div className='dis'>
                                         <Icon type="compass" style={{ color: '#1890ff' }} />
                                         <span></span>
-                                        {datarray.hotel_distance || "距离景点" + (datarray.res_distance || datarray.traffic_distance) + "米"}
-                                    </div>}
+                                        距离景点{  datarray.hotel_distance || datarray.res_distance || datarray.traffic_distance }米
+                                        
+                                    </div>:null}
                             </div>
                             {!datarray.traffic_name ? <div className='location'><Icon type="environment" style={{ color: '#1890ff' }} /><span></span>{datarray.location || datarray.hotel_location || datarray.res_location}</div> : null}
                             <div className='time'>{datarray.time}</div>

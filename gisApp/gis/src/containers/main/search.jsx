@@ -195,7 +195,8 @@ class Search extends React.Component {
                                 .then(otherdata => {
                                     typelist[key] = otherdata
                                     this.setState({
-                                        isfetch:[false,false,true]
+                                        isfetch:[false,false,true],
+                                        isover:true
                                     })
                                 })
                                 .catch(e => {
