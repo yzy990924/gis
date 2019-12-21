@@ -79,7 +79,7 @@ class Main extends React.Component {
                     sceneID: 7
                 })
             }
-         
+        
             else if (sceneID === 34) {
                 this.setState({
                     sceneID: 9
@@ -122,6 +122,17 @@ class Main extends React.Component {
         }
       }
 
+    isSearchScene = value=>{
+        console.log('yeye')
+        console.log(value)
+        if(value){
+            this.setState({
+                sceneID: value,
+                isScene:true
+            })
+        }
+    }
+    
     render() {
         const sceneID = this.state.sceneID
         return (
@@ -156,7 +167,7 @@ class Main extends React.Component {
                         <div className='mainBox'>
                             <Pie className='pie'/>
                             <Map changeRoot={this.changeRoot} className='map' />
-                            {this.state.isSearchList ? <Search searchlist={this.state.searchlist} isSearchList={this.state.isSearchList} /> : <div />}
+                            {this.state.isSearchList ? <Search searchlist={this.state.searchlist} isSearchList={this.state.isSearchList} isSearchScene={this.isSearchScene} /> : <div />}
                         </div>
                     </div>
                 }
