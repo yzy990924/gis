@@ -326,32 +326,40 @@ class Map extends Component {
                     opacity: 1,
                     bevelSize: 0.3,
                     itemStyle: {
-                        color: '#ffffff'
-                    },
-                    label: {
-                        show: false,
-                        fontWeight: 900,
-                        color: '#313695',
-                        fontSize: "100px",
-                        formatter: function (params) {
-                            var id = params.value[2]
-                            console.log(id)
-                            for (let i = 0; i < 28; i++){
-                                console.log(tooltip[i].id)
-                                if (tooltip[i].id === id) {
-                                    console.log('yes')
-                                    if(tooltip[i].id < 24||tooltip[i].id===33){
-                                        return tooltip[i].name
+                        color: '#ffffff',
+                        normal:{
+                            label: {
+                                color:'#313695',
+                                position: 'right',
+                                show: false,
+                                fontSize: "100px",
+                                textStye:{
+                                    color:'#313695',
+                                    fontWeight: 900,
+                                    fontSize: "1000px",
+                                },
+                                formatter: function (params) {
+                                    var id = params.value[2]
+                                    console.log(id)
+                                    for (let i = 0; i < 28; i++){
+                                        console.log(tooltip[i].id)
+                                        if (tooltip[i].id === id) {
+                                            console.log('yes')
+                                            if(tooltip[i].id < 24||tooltip[i].id===33){
+                                                return tooltip[i].name
+                                            }
+                                            else{
+                                                return tooltip[i].name + "\n" + tooltip[i].score + "\t" + tooltip[i].type + "\n" + tooltip[i].loca + "\n" + tooltip[i].telephone
+                                            }
+        
+                                        }
                                     }
-                                    else{
-                                        return tooltip[i].name + "\n" + tooltip[i].score + "\t" + tooltip[i].type + "\n" + tooltip[i].loca + "\n" + tooltip[i].telephone
-                                    }
-
+                                        
                                 }
-                            }
-                                
+                            },
                         }
                     },
+                    
                     minHeight: 0.2,
                 }
             ],
