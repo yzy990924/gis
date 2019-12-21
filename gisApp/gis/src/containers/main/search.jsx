@@ -267,7 +267,7 @@ class Search extends React.Component {
                         <div className='collection' onClick={this.onchangeBoxA}>
                             {
                                 Object.keys(namelist).map((key, item) => 
-                                    <SceneTough key={item} result={namelist[key]} />
+                                    <SceneTough key={item} result={namelist[key]} issearch = {true}/>
                                 )
                             }
                         </div> : null}
@@ -275,7 +275,7 @@ class Search extends React.Component {
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxB}>
                         {
                             Object.keys(loclist).map((key, item) =>
-                                <SceneTough key={item} result={loclist[key]}></SceneTough>
+                                <SceneTough key={item} result={loclist[key]} issearch = {true} ></SceneTough>
                             )
                         }
                     </div>:null}
@@ -284,7 +284,7 @@ class Search extends React.Component {
 
                         {
                             Object.keys(typelist).map((key, item) =>
-                                <SceneTough key={item} result={typelist[key]}></SceneTough>
+                                <SceneTough key={item} result={typelist[key]} issearch = {true}></SceneTough>
                             )
                         }
                     </div>:null}

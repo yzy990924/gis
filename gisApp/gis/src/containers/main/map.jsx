@@ -343,23 +343,21 @@ class Map extends Component {
                         },
                         formatter: function (params) {
                             var id = params.value[2]
-                            console.log(id)
                             for (let i = 0; i < 28; i++){
                                 console.log(tooltip[i].id)
                                 if (tooltip[i].id === id) {
-                                    console.log('yes')
                                     if(tooltip[i].id < 24||tooltip[i].id===33){
                                         return tooltip[i].name
                                     }
                                     else{
                                         return tooltip[i].name + "\n\n" + "评分: " + tooltip[i].score +  "\n" + "地址: " + tooltip[i].loca + "\n" + "联系电话: " + tooltip[i].telephone
                                     }
-
+                                        
                                 }
                             }
-                                
                         }
                     },
+                    
                     minHeight: 0.2,
                 }
             ],
