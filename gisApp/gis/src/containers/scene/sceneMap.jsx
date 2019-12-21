@@ -2120,7 +2120,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "抗震纪念碑",
@@ -2135,8 +2135,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "城建监察编辑部",
@@ -2151,8 +2151,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津张大千艺术研究会",
@@ -2167,8 +2167,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "711便利店",
@@ -2183,7 +2183,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2216,7 +2216,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津国际大厦",
@@ -2231,8 +2231,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "潮你妹潮汕砂锅粥",
@@ -2247,7 +2247,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2264,7 +2264,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天行荣御影视文化传媒有限公司",
@@ -2279,8 +2279,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "先醴粤园",
@@ -2295,7 +2295,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2313,7 +2313,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "便民家电维修",
@@ -2328,7 +2328,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2362,7 +2362,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "百俪家园",
@@ -2377,7 +2377,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2394,7 +2394,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "55号送餐厨房",
@@ -2409,8 +2409,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "安康里",
@@ -2426,8 +2426,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "名片专营",
@@ -2442,8 +2442,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "孙季鲁旧宅",
@@ -2458,8 +2458,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "艾玛国际蒙特梭利幼儿园",
@@ -2474,7 +2474,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2491,7 +2491,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "中环大地",
@@ -2506,8 +2506,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "剑桥大楼",
@@ -2522,8 +2522,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "宏禄茶叶",
@@ -2538,7 +2538,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2572,7 +2572,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "梅拉诺咖啡",
@@ -2587,7 +2587,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2605,7 +2605,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "华竹食府",
@@ -2620,7 +2620,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2637,7 +2637,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "1618清真公馆",
@@ -2652,8 +2652,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津市烟草公司第一分公司",
@@ -2668,8 +2668,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津市烟草公司第一分公司",
@@ -2684,7 +2684,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2750,7 +2750,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "郑州道27号-A座",
@@ -2765,8 +2765,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "郑州道27号-C座",
@@ -2781,7 +2781,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2832,7 +2832,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津保晟国际物流有限公司",
@@ -2847,8 +2847,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "中国华融",
@@ -2863,7 +2863,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2880,7 +2880,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "民进天津开明书院",
@@ -2895,7 +2895,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2928,7 +2928,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津古井天文化传播有限公司",
@@ -2943,8 +2943,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "和安里",
@@ -2959,7 +2959,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -2992,7 +2992,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "冥想感知梵医馆",
@@ -3007,8 +3007,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "中共和平区劲松护养院联合支部委员会",
@@ -3023,7 +3023,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3040,7 +3040,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "津港房地产评估有限公司",
@@ -3055,8 +3055,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "2012啤酒坊",
@@ -3072,7 +3072,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3120,7 +3120,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "颜惠庆旧宅",
@@ -3136,7 +3136,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3170,7 +3170,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "昭余里",
@@ -3185,7 +3185,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3202,7 +3202,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "李叔福旧居",
@@ -3218,24 +3218,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "name": "李叔福旧居",
-                        "height": 48,
-                        "value": 5
-                    },
-                    "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [
-                            [
-                                [117.217166,39.118831],[117.217229,39.118639],[117.217287,39.11866],[117.217242,39.118726],[117.217283,39.118737],[117.217278,39.118695],[117.217305,39.118709],[117.217341,39.11867],[117.217593,39.118772],[117.217471,39.118992],[117.217211,39.118898],[117.217233,39.118856],[117.217211,39.118842],[117.217247,39.118754],
-[117.217256,39.118754],[117.217233,39.118761],[117.217179,39.118824]
-                            ]
-                        ]
-                    }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3252,7 +3235,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "公安局幼儿园",
@@ -3267,8 +3250,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "姥爷小海鲜",
@@ -3283,24 +3266,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
-                    "type": "Feature",
-                    "properties": {
-                        "name": "姥爷小海鲜",
-                        "height": 59,
-                        "value": 8
-                    },
-                    "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [
-                            [
-                                [117.216189,39.119115],[117.216247,39.118985],[117.216984,39.119206],[117.216944,39.1193],[117.21631,39.119111],[117.216292,39.11915]
-                            ]
-                        ]
-                    }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "樱花居",
@@ -3315,7 +3282,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3332,7 +3299,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "光阴的故事",
@@ -3347,7 +3314,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3364,7 +3331,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津市财政局老干部处",
@@ -3379,7 +3346,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3431,7 +3398,7 @@ class SceneMap extends Component {
                 {
                     "type": "Feature",
                     "properties": {
-                        "name": "五大道文化旅游区张志潭旧宅",
+                        "name": "张志潭旧宅",
                         "height": 54,
                         "value": 8
                     },
@@ -3449,7 +3416,7 @@ class SceneMap extends Component {
                     "properties": {
                         "name": "民园东里",
                         "height": 44,
-                        "value": 9
+                        "value": 3
                     },
                     "geometry": {
                         "type": "Polygon",
@@ -3493,7 +3460,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "津南里",
@@ -3508,8 +3475,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "天津庆王府山益里精品酒店",
@@ -3524,7 +3491,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3573,7 +3540,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "周氏旧宅",
@@ -3588,7 +3555,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {
@@ -3638,7 +3605,7 @@ class SceneMap extends Component {
                         ]
                     }
                 },
-                {
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "谦受里-6号楼",
@@ -3669,8 +3636,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "泉山里-1号楼",
@@ -3685,8 +3652,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "谦受里-8号楼",
@@ -3701,8 +3668,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "谦受里-10号楼",
@@ -3717,8 +3684,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "谦受里-13号楼",
@@ -3733,8 +3700,8 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
-                {
+                },*/
+                /*{
                     "type": "Feature",
                     "properties": {
                         "name": "谦受里-14号楼",
@@ -3749,7 +3716,7 @@ class SceneMap extends Component {
                             ]
                         ]
                     }
-                },
+                },*/
                 {
                     "type": "Feature",
                     "properties": {

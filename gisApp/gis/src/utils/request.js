@@ -3,7 +3,7 @@ import {
     decamelizeKeys
 } from 'humps'
 
-export const API_ROOT = `http://172.23.249.139:8085/laravel6/public/api`
+export const API_ROOT = `http://192.168.43.146:8085/laravel6/public/api`
 
 export function fetchData(apiPath, request = {}) {
     const url = `${API_ROOT}/${apiPath}`;
