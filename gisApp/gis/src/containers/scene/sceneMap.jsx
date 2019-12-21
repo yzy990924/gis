@@ -5178,7 +5178,7 @@ class SceneMap extends Component {
             min: 0,
             max: 10,
             inRange: {
-                color: [' #7E8BA5', '#313695', '#4575b4', '#ffc0ff', '#abd9e9', '#74add1', '#fd5f00', '#f46d43', '#4575b4', '#0f4c80', '#3e93ef']
+                color: [' #7E8BA0', '#313695', '#4575b4', '#ffc0ff', '#abd9e9', '#74add1', '#fd5f00', '#f46d43', '#4575b4', '#0f4c80', '#3e93ef']
             }
         },
         tooltip: {
@@ -5214,8 +5214,8 @@ class SceneMap extends Component {
                 maxBeta: 360,
                 alpha: 50,
                 center: [50, 0, -20],
-                distance: 350,
-                minDistance: 10,
+                distance: 1550,
+                minDistance: 50,
                 damping: 0,   
                 rotateSensitivity: [0.6, 0.7],
                 panMouseButton: 'left',
@@ -5233,7 +5233,7 @@ class SceneMap extends Component {
                 textStyle: {
                     color: '#EECBAD',
                     fontWeight: 'normal',
-                    fontSize: 20,
+                    fontSize: 17,
                     backgroundColor: 'rgba(0,23,11,0)'
                 },
                 emphasis: {

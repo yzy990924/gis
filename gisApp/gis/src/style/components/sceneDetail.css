@@ -1,7 +1,7 @@
 #SceneDetail {
-    background-color: rgba(213,213,213,0.05);
+    background-color: rgba(213,213,213,0.6);
     position: absolute;
-    width: 24%;
+    width: 20%;
     float: left;
     z-index: 1;
     border-radius: 8px;
@@ -16,13 +16,14 @@
     margin-left: 4%;
 }
 .head {
-    font-size: 35px;
+    /*opacity: 100%;*/
+    font-size: 30px;
     height: 40px;
     font-weight: 500;
     line-height: 40px;
     opacity: 1;
     color: #3A3E41;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
     display: inline-block;
 }
 

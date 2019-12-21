@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import echarts from 'echarts';
+import { Icon } from 'antd';
 import 'echarts-gl';
 import PropTypes from 'prop-types';
 import ReactEcharts from 'echarts-for-react';
@@ -113,6 +114,7 @@ class Map extends Component {
         return {
             geo3D: {
                 map: '天津',
+                layoutCenter: ['80%', '80%'], 
                 environment: '#ffffff',
                 shading: 'lambert',
                 layoutSize: '100%',
@@ -143,7 +145,8 @@ class Map extends Component {
                     minDistance: 10,
                     maxDistance: 150,
                     rotateSensitivity: [0.6, 0.7],
-                    zoomSensitivity: 1
+                    zoomSensitivity: 1,
+                    center: [-30,-10,0]
                     //beta:
                 },
                 postEffect: {
@@ -326,37 +329,32 @@ class Map extends Component {
                     opacity: 1,
                     bevelSize: 0.3,
                     itemStyle: {
-                        color: '#ffffff',
-                        normal:{
-                            label: {
-                                color:'#313695',
-                                position: 'right',
-                                show: false,
-                                fontSize: "100px",
-                                textStye:{
-                                    color:'#313695',
-                                    fontWeight: 900,
-                                    fontSize: "1000px",
-                                },
-                                formatter: function (params) {
-                                    var id = params.value[2]
-                                    console.log(id)
-                                    for (let i = 0; i < 28; i++){
-                                        console.log(tooltip[i].id)
-                                        if (tooltip[i].id === id) {
-                                            console.log('yes')
-                                            if(tooltip[i].id < 24||tooltip[i].id===33){
-                                                return tooltip[i].name
-                                            }
-                                            else{
-                                                return tooltip[i].name + "\n" + tooltip[i].score + "\t" + tooltip[i].type + "\n" + tooltip[i].loca + "\n" + tooltip[i].telephone
-                                            }
-        
-                                        }
+                        color: '#ffffff'
+                    },
+                    label: {
+                        show: false,
+                        fontWeight: 900,
+                        textStyle: {
+                            color: '#000000',
+                            fontSize: "18",
+                            fontWeight: 'bold',
+                            borderColor: '#767593',
+                            borderWidth: '5',
+                        },
+                        formatter: function (params) {
+                            var id = params.value[2]
+                            for (let i = 0; i < 28; i++){
+                                console.log(tooltip[i].id)
+                                if (tooltip[i].id === id) {
+                                    if(tooltip[i].id < 24||tooltip[i].id===33){
+                                        return tooltip[i].name
+                                    }
+                                    else{
+                                        return tooltip[i].name + "\n\n" + "评分: " + tooltip[i].score +  "\n" + "地址: " + tooltip[i].loca + "\n" + "联系电话: " + tooltip[i].telephone
                                     }
                                         
                                 }
-                            },
+                            }
                         }
                     },
                     
