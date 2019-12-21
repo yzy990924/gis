@@ -129,6 +129,11 @@ class Login extends React.Component {
 
             })
     }
+    oncancel(){
+        this.setState({
+            willLogin:false
+        })
+    }
 
     render() {
         return (
@@ -168,7 +173,7 @@ class Login extends React.Component {
                             <div className='ButtonTable'>
                                 <div className='loginButton'>
                                     <Button type="primary"loading loading={this.state.iconLoading} onClick={this.handleClickRegister} style = {{height:"50px",width:"150px",backgroundColor:"#ffa500",borderColor:"#ffa500"}}>确定</Button>
-                                    <Button style = {{height:"50px",width:"150px"}}>取消</Button>
+                                    <Button style = {{height:"50px",width:"150px"}} onClick = {this.oncancel}>取消</Button>
                                 </div>
                             </div>
                         </div>

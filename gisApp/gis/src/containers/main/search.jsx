@@ -14,7 +14,8 @@ class Search extends React.Component {
         this.state = {
             display: ['block', 'none', 'none'],
             searchArray: [],
-            isfetch:[false,false,false]
+            isfetch:[false,false,false],
+            sid:''
         }
         this.onchangeBoxA = this.onchangeBoxA.bind(this)
         this.onchangeBoxB = this.onchangeBoxB.bind(this)
@@ -246,11 +247,20 @@ class Search extends React.Component {
         })
         this.searchType()
     }
+
+    setScene = value => {
+        this.setState({
+          sid:value
+        })
+        const { isSearchScene } = this.props;
+        isSearchScene(value);
+      }
+
     render() {
         const display = this.state
 
         return (
-            <div id='Search'>
+            <div id='Search' >
                 <div className='personBox'>
                     <div className='personbutton'>
                         <Button onClick={this.onchangeBoxA} style= {{width:"33.3%"}} >
@@ -267,7 +277,7 @@ class Search extends React.Component {
                         <div className='collection' onClick={this.onchangeBoxA}>
                             {
                                 Object.keys(namelist).map((key, item) => 
-                                    <SceneTough key={item} result={namelist[key]} issearch = {true}/>
+                                    <SceneTough key={item} result={namelist[key]} issearch = {true} setScene={this.setScene}/>
                                 )
                             }
                         </div> : null}
@@ -275,7 +285,7 @@ class Search extends React.Component {
                     <div className='transtion' style={this.getStylesB()} onClick={this.onchangeBoxB}>
                         {
                             Object.keys(loclist).map((key, item) =>
-                                <SceneTough key={item} result={loclist[key]} issearch = {true} ></SceneTough>
+                                <SceneTough key={item} result={loclist[key]} issearch = {true} setScene={this.setScene}></SceneTough>
                             )
                         }
                     </div>:null}
@@ -284,7 +294,7 @@ class Search extends React.Component {
 
                         {
                             Object.keys(typelist).map((key, item) =>
-                                <SceneTough key={item} result={typelist[key]} issearch = {true}></SceneTough>
+                                <SceneTough key={item} result={typelist[key]} issearch = {true} setScene={this.setScene}></SceneTough>
                             )
                         }
                     </div>:null}

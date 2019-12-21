@@ -1,9 +1,9 @@
 import React from 'react';
 import { Icon } from 'antd';
 import "../style/components/sceneTough.css"
+import Scene from '../containers/scene/scene'
 
-
-
+let sid 
 class SceneTough extends React.Component {
 
     constructor(props) {
@@ -17,14 +17,14 @@ class SceneTough extends React.Component {
     }
 
     onsceneMap() {
-        this.setState({
-            isScene: true
-        })
+        const { setScene } = this.props;
+        setScene(sid);
     }
 
     render() {
         const datarray = this.props.result
         const issearch = this.props.issearch
+        sid = datarray.id
         return (
             <div id={datarray.name ? 'Myscene' : 'SceneTough '}>
                 <div className='sceneBox' onClick={issearch ? this.onsceneMap : null}>
@@ -53,11 +53,7 @@ class SceneTough extends React.Component {
                     </div>
                     <div className='phone'>{datarray.telephone}</div>
                 </div>
-                {this.state.isScene ?
-                    <div className='scene'>
-                        <Scene sceneID={datarray.id} />
-                    </div>
-                    : null}
+
             </div>
         )
     }
