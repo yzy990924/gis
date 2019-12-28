@@ -76,7 +76,7 @@ class Pie extends Component {
                         normal: {
                         textStyle : {
                             fontWeight : 'normal',
-                            fontSize : '17',
+                            fontSize : '15',
                             }
                         }
                     },

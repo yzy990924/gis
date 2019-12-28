@@ -48,7 +48,7 @@ class SceneTough extends React.Component {
                                 {!issearch && (datarray.hotel_distance!=undefined||datarray.res_distance!=undefined || datarray.traffic_distance!=undefined)?                                     <div className='dis'>
                                         <Icon type="compass" style={{ color: '#1890ff' }} />
                                         <span></span>
-                                        距离景点{  datarray.hotel_distance || datarray.res_distance || datarray.traffic_distance }米
+                                        距离景点{  datarray.hotel_distance || datarray.res_distance || datarray.traffic_distance }
                                         
                                     </div>:null}
                             </div>

@@ -9,6 +9,7 @@ import Scene from '../scene/scene.jsx'
 import { fetchData } from '../../utils/request.js'
 import Pie from './pie'
 
+
 class Main extends React.Component {
     constructor(props) {
         super(props);
@@ -142,7 +143,9 @@ class Main extends React.Component {
                     <div style={{height:'100%'}}>
                          <Drawer
                                 title="个人收藏"
+
                                 placement={this.state.placement}
+                                width={350}
                                 closable={false}
                                 onClose={this.onClose}
                                 visible={this.state.visible}

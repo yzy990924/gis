@@ -46,7 +46,7 @@ body{
 }
 .searchicon{
     background-color: #1890ff;
-    margin-right: 117px;
+    margin-right: 45px;
 }
 
 .usericon{
@@ -61,7 +61,7 @@ body{
 }
 .pie{
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 95px;
     z-index: 10;
 }

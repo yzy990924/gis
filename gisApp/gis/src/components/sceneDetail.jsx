@@ -9,11 +9,11 @@ const { confirm } = Modal;
 let sceneID = ''
 
 const success = () => {
-    message.success('This is a success message');
+    message.success('收藏成功！');
   };
   
   const error = () => {
-    message.error('This is an error message');
+    message.error('该景点已在您的收藏中，无需重复收藏喔');
   };
   
 

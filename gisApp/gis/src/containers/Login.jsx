@@ -170,12 +170,14 @@ class Login extends React.Component {
             
             <div>
                 {this.state.isalert?<Alert
-      message="Error"
-      description="登录失败"
-      type="error"
-      closable
-      onClose={this.onClose}
-    />:null}
+                  message="登陆失败"
+                  description='用户名不存在或密码错误, 请重新登陆'
+                  type="error"
+                  closable
+                  onClose={this.onClose}
+                  style={{ height: "80px", width: "400px", marginBottom: "8%" }}
+                />:null}
+
                 <div className='login' id='login'>
                 {!this.state.willLogin ?
                     <div className='loginmain'>
@@ -186,7 +188,7 @@ class Login extends React.Component {
                                     <Input placeholder='用户名' onInput={this.handleInputUname} style={{ height: "50px", width: "400px", marginBottom: "8%" }} />
                                 </div>
                                 <div className='passwd'>
-                                    <Input.Password placeholder='密码(至少6位)' onInput={this.handleInputP} style={{ height: "50px", width: "400px", marginBottom: "8%" }} />
+                                    <Input.Password placeholder='密码 (至少6位)' onInput={this.handleInputP} style={{ height: "50px", width: "400px", marginBottom: "8%" }} />
                                 </div>
                             </div>
                             <div className='ButtonTable'>
