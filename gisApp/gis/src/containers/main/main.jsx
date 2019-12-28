@@ -21,27 +21,30 @@ class Main extends React.Component {
             visible: false,
             placement: 'left',
             value: '',
-            isbing:false,
+            isBing: false,
         }
         this.changeRoot = this.changeRoot.bind(this)
         this.onClickPerson = this.onClickPerson.bind(this)
         this.onClickSearch = this.onClickSearch.bind(this)
     }
 
-  showDrawer = () => {
-    this.setState({
-      visible: !this.state.visible,
-    });
-  };
+    showDrawer = () => {
+        this.setState({
+            visible: !this.state.visible,
+        });
+    };
 
 
-  onClose = () => {
-    this.setState({
-      visible: !this.state.visible,
-    });
-  };
-
- 
+    onClose = () => {
+        this.setState({
+            visible: !this.state.visible,
+        });
+    };
+    showBing = () =>{
+        this.setState({
+            isBing: !this.state.isBing
+        })
+    }
 
     changeRoot(isScene, sceneID) {
         if (isScene) {
@@ -79,7 +82,7 @@ class Main extends React.Component {
                     sceneID: 7
                 })
             }
-        
+
             else if (sceneID === 34) {
                 this.setState({
                     sceneID: 9
@@ -99,7 +102,7 @@ class Main extends React.Component {
 
     getStylesTop() {
         let styleObj;
-        styleObj = { width: window.innerWidth  };
+        styleObj = { width: window.innerWidth };
         return styleObj;
     }
     onClickPerson() {
@@ -115,57 +118,63 @@ class Main extends React.Component {
     handleSearch = (e) => { this.setState({ searchlist: e.target.value.trim() }); console.log(this.state.searchlist) }
 
     setValue = value => {
-        if(value){
+        if (value) {
             this.setState({
-                isScene:false
-            })
-        }
-      }
-
-    isSearchScene = value=>{
-        console.log('yeye')
-        console.log(value)
-        if(value){
-            this.setState({
-                sceneID: value,
-                isScene:true
+                isScene: false
             })
         }
     }
-    
+
+    isSearchScene = value => {
+        console.log('yeye')
+        console.log(value)
+        if (value) {
+            this.setState({
+                sceneID: value,
+                isScene: true
+            })
+        }
+    }
+
     render() {
         const sceneID = this.state.sceneID
         return (
             <div id='main' style={this.getStyles()}>
                 {this.state.isScene ?
                     null :
-                    <div style={{height:'100%'}}>
-                         <Drawer
-                                title="个人收藏"
-                                placement={this.state.placement}
-                                closable={false}
-                                onClose={this.onClose}
-                                visible={this.state.visible}
-                                getContainer={false}
-                            >
-                            <Person/> 
-                            </Drawer>
-                           
+                    <div style={{ height: '100%' }}>
+                        <Drawer
+                            title="个人收藏"
+                            placement={this.state.placement}
+                            closable={false}
+                            onClose={this.onClose}
+                            visible={this.state.visible}
+                            getContainer={false}
+                        >
+                            <Person />
+                        </Drawer>
+
                         <div className='topBox'>
                             <div className='top' style={this.getStylesTop()}>
-                                <div className = 'usericon' onClick={this.showDrawer}>
-                                <Icon type="user" className='user icon' style={{ color: '#ffffff', fontSize: "40px" }}  onClick={this.showDrawer}/>
-                                    </div> 
+                                <div style = {{display:'flex'}} >
+                                    <div className='usericon' onClick={this.showDrawer}>
+                                        <Icon type="user" className='user icon' style={{ color: '#ffffff', fontSize: "40px" }} onClick={this.showDrawer} />
+                                    </div>
+                                    <div className='usericon' onClick={this.showBing}>
+                                        <Icon type="pie-chart" className='user icon' style={{ color: '#ffffff', fontSize: "37px" }}onClick={this.showBing} />
+                                    </div>
+                                </div>
+
                                 <div className='inputSearch'>
-                                    <Input className='inputField' onInput={this.handleSearch} style = {{height:'45px'}} />
-                                    <div className = 'searchicon'>
-                                    <Icon type="search" className=' search icon' style={{ color: '#ffffff', fontSize: "40px" }} onClick={this.onClickSearch} />
+                                    <Input className='inputField' onInput={this.handleSearch} style={{ height: '45px' }} />
+                                    <div className='searchicon'>
+                                        <Icon type="search" className=' search icon' style={{ color: '#ffffff', fontSize: "40px" }} onClick={this.onClickSearch} />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className='mainBox'>
-                            <Pie className='pie'/>
+                            {this.state.isBing?<Pie className='pie' />:null}
                             <Map changeRoot={this.changeRoot} className='map' />
                             {this.state.isSearchList ? <Search searchlist={this.state.searchlist} isSearchList={this.state.isSearchList} isSearchScene={this.isSearchScene} /> : <div />}
                         </div>
